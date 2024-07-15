@@ -4,8 +4,7 @@
   <img src="https://user-images.githubusercontent.com/74038190/212749443-0810e511-4f46-4492-96aa-3c110d7bc41a.gif" width=300 height=300/></p>
 
 
-## New Members
-<h1></h1>
+<h2>New Members</h2>
 
 > [!IMPORTANT]
 > Be sure to join the ACM server if you haven't already. DM me if you need the link: ani_bytes <- My username
