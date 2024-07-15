@@ -7,8 +7,5 @@
 ## New Members
 <h1></h1>
 
-[!IMPORTANT]
-> Key information users need to know to achieve their goal
-
-
-Be sure to join the ACM server if you haven't already. DM me if you need the link: ani_bytes <- My username
+> [!IMPORTANT]
+> Be sure to join the ACM server if you haven't already. DM me if you need the link: ani_bytes <- My username
