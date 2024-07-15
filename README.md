@@ -7,7 +7,7 @@
 ## New Members
 <h1></h1>
 
-> [!IMPORTANT]
+[!IMPORTANT]
 > Key information users need to know to achieve their goal
 
 
