@@ -7,4 +7,6 @@
 <h2>New Members</h2>
 
 > [!IMPORTANT]
-> Be sure to join the ACM server if you haven't already. DM me if you need the link: ani_bytes <- My username
+> Be sure to join the ACM server if you haven't already. This will be our main means of communication.
+> [!NOTE]
+> DM **ani_bytes** at Discord if you need the invite.
