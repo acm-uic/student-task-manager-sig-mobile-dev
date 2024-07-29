@@ -16,4 +16,6 @@
 ## Preview of Our Development Process
 It goes without saying that any major undertaking requires planning beforehand. That is especially true for mobile development. I speak from experience when I say, you're headed for disaster if you don't plan out all your components, screens, backend, etc before you touch the keyboard. 
 
-After extensive research, here are the basic steps I found in the app development cycle.
+For that reason, I gathered information on the process of app development with extensive research. 
+
+Here are the basic steps I found.
