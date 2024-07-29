@@ -18,4 +18,4 @@ It goes without saying that any major undertaking requires planning beforehand. 
 
 For that reason, I gathered information on the process of app development with extensive research. 
 
-Here are the basic steps I found.
+Here are the basic steps I found, we'll be using this process for all our projects. The goal is to give us a basic process to work with while still allowing flexibility and creativity with the app.
