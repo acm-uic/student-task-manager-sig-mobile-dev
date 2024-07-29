@@ -26,7 +26,7 @@ Here's the type of team enviroment I'm working to build. Let me know if anyone h
     - I cannot guarantee no deadlines, but you can be sure you will know well in advance if something needs to get done
     - Work that's flexible to your schedule is a top priority
 
-  - Competitiveness
+- Competitiveness
     - Challenge ourselves and others in the team and work to get the best experience and skills
     - By no means will we fight amongst ourselves, but the idea is to push each other to greater heights
 
