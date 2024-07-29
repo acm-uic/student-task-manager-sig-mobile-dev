@@ -12,3 +12,6 @@
 
 > [!NOTE]
 > DM **ani_bytes** at Discord if you need the invite.
+
+
+# Preview of Our Development Process
