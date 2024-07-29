@@ -30,12 +30,12 @@ Here's the type of team enviroment I'm working to build. Let me know if anyone h
     - Challenge ourselves and others in the team and work to get the best experience and skills
     - By no means will we fight amongst ourselves, but the idea is to push each other to greater heights
 
-  - Mentorship
+- Mentorship
     - We are very lucky to have a lot of seniors in our group, and they have a lot of wisdom
     - A lot of us are just starting app development, so don't hesitate to reach out to your lead or a senior when in trouble
     - If Stack Overflow fails, we're here
 
-  - Joy
+- Joy
     - Of course, there has to be a reward when we work hard
     - Progress is a obvious one, but there's also friendships and mentorships
     - This club is about growing, and even if it is painful at times, growing is joy
