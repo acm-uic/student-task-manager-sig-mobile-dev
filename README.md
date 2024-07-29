@@ -4,7 +4,7 @@
 </p>
 
 
-<h2>New Members</h2>
+## New Members
 
 > [!IMPORTANT]
 > Be sure to join the ACM server if you haven't already. This will be our main means of communication.
@@ -13,4 +13,4 @@
 > DM **ani_bytes** at Discord if you need the invite.
 
 
-# Preview of Our Development Process
+## Preview of Our Development Process
