@@ -15,12 +15,18 @@
 ## Team Culture and Values
 Here's the type of team enviroment I'm working to build. Let me know if anyone has suggestions.
 
-- Leadership:
+- Unity
+    - Working as one, single unit and acting as one. It's almost like the team is one person, but with multiple limbs. 
+    - Some people will work more than others in some phases of the development process
+    - The idea is to distribute work so it is managable, without trading off quality for less effort
+    - Which means you are putting in less effort as an indvidual, but the app being made is still a robust one
+      
+- Leadership
     - Everyone should strive to be a leader.
     - Creativity and discipline are greatly valued.
     - Work to bring yourself to the top, and take everyone around you for the ride.
       
-- Flexibility:
+- Flexibility
     - A lot of us are nearing the end of college, and this means, not much free time
     - With this in mind, a lot of the work we do can be done at your own time
     - I cannot guarantee no deadlines, but you can be sure you will know well in advance if something needs to get done
@@ -47,3 +53,17 @@ It goes without saying that any major undertaking requires planning beforehand. 
 For that reason, I gathered information on the process of app development with extensive research. 
 
 Here are the basic steps I found, we'll be using this process for all our projects. The goal is to give us a basic idea to work with while still allowing flexibility and creativity with the app.
+
+### Step 1: Discovery
+- Roles involved:
+  - Everyone
+ 
+Let the creativity flow! This is the stage where...
+    - Creatively inclined people
+        - Find an idea that's not already on the market
+        - Research possible selling points and features -- What do we have that others don't?
+
+    - Analytically inclined people
+        - Research potential databases/APIs/libraries that can be used to make the app -- Ex. If we make a book app, how will we get the book info? Local database? API?
+        - Scout out possible competition -- what features do they have?
+  
