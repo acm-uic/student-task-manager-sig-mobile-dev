@@ -59,11 +59,11 @@ Here are the basic steps I found, we'll be using this process for all our projec
   - Everyone
  
 Let the creativity flow! This is the stage where...
-    - Creatively inclined people
+  - Creatively inclined people
         - Find an idea that's not already on the market
         - Research possible selling points and features -- What do we have that others don't?
 
-    - Analytically inclined people
+  - Analytically inclined people
         - Research potential databases/APIs/libraries that can be used to make the app -- Ex. If we make a book app, how will we get the book info? Local database? API?
         - Scout out possible competition -- what features do they have?
   
