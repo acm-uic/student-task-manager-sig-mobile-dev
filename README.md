@@ -45,6 +45,10 @@ For that reason, I gathered information on the process of app development with e
 
 Here are the basic steps I found, we'll be using this process for all our projects. The goal is to give us a basic idea to work with while still allowing flexibility and creativity with the app.
 
+
+---
+
+
 ### Step 1: Discovery
 - Roles involved:
   - Everyone
