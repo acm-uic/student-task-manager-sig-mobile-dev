@@ -61,6 +61,10 @@ Let the creativity flow! This is the stage where...
   - Are there any problems that will arise if we proceed with the creation of the app? | Ex. Limitations with the coding language/library we'll be using
   - What features will there be available on the app?
 
+
+---
+
+
 ### Step 2: Design
 - Roles involved:
   - Designers
@@ -71,6 +75,10 @@ We have an idea. Now we visualize it. This is the state where...
   - We draw up the screen visuals to help us see what we want
   - All screens will be drawn by designers
   - Everyone pitches in and requests changes to the designers
+
+
+---
+
 
 ### Step 3: Backend
 - Roles involved:
