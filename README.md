@@ -123,7 +123,7 @@ It's time to work off the hard work of the backend programmers. This is the stag
   - Designer is consulted to see if everything looks good, or additions are required
   - Button presses are connected to backend functions
   - Everything on the UI and UX is taken care of
-  - Fullstack lead goes the code and finds errors if there is a problem between connecting the frontend and backend
+  - Fullstack lead goes through the code and finds errors if there is a problem between connecting the frontend and backend
 
 
 ---
