@@ -32,19 +32,10 @@ Here's the type of team enviroment I'm working to build. Let me know if anyone h
     - I cannot guarantee no deadlines, but you can be sure you will know well in advance if something needs to get done
     - Work that's flexible to your schedule is a top priority
 
-- Competitiveness
-    - Challenge ourselves and others in the team and work to get the best experience and skills
-    - By no means will we fight amongst ourselves, but the idea is to push each other to greater heights
-
 - Mentorship
     - We are very lucky to have a lot of seniors in our group, and they have a lot of wisdom
     - A lot of us are just starting app development, so don't hesitate to reach out to your lead or a senior when in trouble
     - If Stack Overflow fails, we're here
-
-- Joy
-    - Of course, there has to be a reward when we work hard
-    - Progress is a obvious one, but there's also friendships and mentorships
-    - This club is about growing, and even if it is painful at times, growing is joy
 
    
 ## Preview of Our Development Process
@@ -59,12 +50,32 @@ Here are the basic steps I found, we'll be using this process for all our projec
   - Everyone
  
 Let the creativity flow! This is the stage where...
-  - Creatively inclined people
-    - Find an idea that's not already on the market
-    - Where is the future headed? What kind of app leverages that? What trends can we hop on | Can we create a new trend?
-    - Research possible selling points and features | What do we have that others don't?
+  - Find an idea that's not already on the market
+  - Where is the future headed? What kind of app leverages that? What trends can we hop on | Can we create a new trend?
+  - Research possible selling points and features | What do we have that others don't?
+  - Research potential databases/APIs/libraries that can be used to make the app | Ex. If we make a book app, how will we get the book info? Local database? API?
+  - Are there any problems that will arise if we proceed with the creation of the app? | Ex. Limitations with the coding language/library we'll be using
+  - What features will there be available on the app?
 
-  - Analytically inclined people
-    - Research potential databases/APIs/libraries that can be used to make the app | Ex. If we make a book app, how will we get the book info? Local database? API?
-    - Are there any problems that will arise if we proceed with the creation of the app? | Ex. Limitations with the coding language/library we'll be using
-  
+### Step 2: Design
+- Roles involved:
+  - Designers
+  - Managers and Leads
+  - Anyone who'd like to pitch in on design
+
+We have an idea. Now we visualize it. This is the state where...
+  - We draw up the screen visuals to help us see what we want
+  - All screens will be drawn by designers
+  - Everyone pitches in and requests changes to the designers
+
+### Step 3: Backend
+- Roles involved:
+  - Backend lead
+  - Backend team
+  - Managers and Leads
+
+Now we figure out how we make it work behind the screens. This is the stage where...
+  - What backend functions are required for the actions taken by the user in the frontend?
+  - How can we use the database to achieve this result?
+  - Code the backend and all functions
+  - Make them easily readable for the rest of the team
