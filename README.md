@@ -24,6 +24,7 @@ Here's the type of team enviroment I'm working to build. Let me know if anyone h
 - Leadership
     - Everyone should strive to be a leader.
     - Creativity and discipline are greatly valued.
+    - Leads will have the flexibility to work in any way they want to achieve the result, each team will be its own entity with its own way of doing things.
     - Work to bring yourself to the top, and take everyone around you for the ride.
       
 - Flexibility
@@ -36,6 +37,12 @@ Here's the type of team enviroment I'm working to build. Let me know if anyone h
     - We are very lucky to have a lot of seniors in our group, and they have a lot of wisdom
     - A lot of us are just starting app development, so don't hesitate to reach out to your lead or a senior when in trouble
     - If Stack Overflow fails, we're here
+
+
+## Reason for a management tree
+A management tree is established so that not every problem goes to one person. If you have any problem or doubt about how to do things, you can be directed to the multitude of people in the tree to have it cleared. 
+
+A heirarchy is established to keep things efficient and not to overwhelm any one person. 
 
    
 ## Preview of Our Development Process
