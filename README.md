@@ -57,21 +57,35 @@ Let the creativity flow! This is the stage where...
   - Find an idea that's not already on the market
   - Where is the future headed? What kind of app leverages that? What trends can we hop on | Can we create a new trend?
   - Research possible selling points and features | What do we have that others don't?
+
+---
+
+
+### Step 2: Planning
+- Roles involved:
+  - Everyone
+
+We have a great idea, but is it possible? This is the stage where...
   - Research potential databases/APIs/libraries that can be used to make the app | Ex. If we make a book app, how will we get the book info? Local database? API?
   - Are there any problems that will arise if we proceed with the creation of the app? | Ex. Limitations with the coding language/library we'll be using
   - What features will there be available on the app?
+  - What platform will we be using?
+  - Any other problems?
+
+> [!NOTE]
+> If we can't find solutions to the problems we think of, we go back to Step 1
 
 
 ---
 
 
-### Step 2: Design
+### Step 3: Design
 - Roles involved:
   - Designers
   - Managers and Leads
   - Anyone who'd like to pitch in on design
 
-We have an idea. Now we visualize it. This is the state where...
+Now we visualize it. This is the state where...
   - We draw up the screen visuals to help us see what we want
   - All screens will be drawn by designers
   - Everyone pitches in and requests changes to the designers
@@ -80,7 +94,7 @@ We have an idea. Now we visualize it. This is the state where...
 ---
 
 
-### Step 3: Backend
+### Step 4: Backend
 - Roles involved:
   - Backend lead
   - Backend team
@@ -91,3 +105,51 @@ Now we figure out how we make it work behind the screens. This is the stage wher
   - How can we use the database to achieve this result?
   - Code the backend and all functions
   - Make them easily readable for the rest of the team
+
+
+---
+
+
+### Step 5: Frontend
+- Roles involved:
+  - Frontend lead
+  - Designers
+  - Fullstack lead
+  - Frontend team
+  - Managers and Leads
+
+It's time to work off the hard work of the backend programmers. This is the stage where...
+  - Screens are established
+  - Designer is consulted to see if everything looks good, or additions are required
+  - Button presses are connected to backend functions
+  - Everything on the UI and UX is taken care of
+  - Fullstack lead goes the code and finds errors if there is a problem between connecting the frontend and backend
+
+
+---
+
+
+### Step 6: Testing
+- Roles involved
+  - Everyone
+
+The app's done! But is it really? This is the stage where...
+  - Tester goes through every screen and uses every feature
+  - Tester tries to use the app in different devices to see if the screen changes dynamically based on available screen space
+
+> [!NOTE]
+> If the tester(s) find any problems, they direct them to the appropriate team/lead so it can be solved
+
+
+
+---
+
+
+### Step 7: Publication
+- Roles involved
+  - Everyone
+
+Now the app's really done. This is the stage where...
+  - We go through the publication process to get our app published
+  - Marketing, if necessary. We go on social media and tell everyone that new app is available
+  - Obviously, if we build an app for an organization such as UIC or someone else, the organization will take care of spreading the word
