@@ -40,13 +40,6 @@ Here's the type of team enviroment I'm working to build. Let me know if anyone h
     - If Stack Overflow fails, we're here
 
 ---
-
-## Reason for a management tree
-A management tree is established so that not every problem goes to one person. If you have any problem or doubt about how to do things, you can be directed to the multitude of people in the tree to have it cleared. 
-
-A heirarchy is established to keep things efficient and not to overwhelm any one person. 
-
----
    
 ## Preview of Our Development Process
 It goes without saying that any major undertaking requires planning beforehand. That is especially true for mobile development. I speak from experience when I say, you're headed for disaster if you don't plan out all your components, screens, backend, etc before you touch the keyboard. 
