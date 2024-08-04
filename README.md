@@ -65,7 +65,7 @@ Let the creativity flow! This is the stage where...
   - Where is the future headed? What kind of app leverages that? What trends can we hop on | Can we create a new trend?
   - Research possible selling points and features | What do we have that others don't?
 
----
+--
 
 
 ### Step 2: Planning
