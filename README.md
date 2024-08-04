@@ -11,6 +11,8 @@
 > [!NOTE]
 > DM **ani_bytes** at Discord if you need the invite.
 
+---
+
 ## Team Culture and Values
 Here's the type of team enviroment I'm working to build. Let me know if anyone has suggestions.
 
@@ -37,12 +39,14 @@ Here's the type of team enviroment I'm working to build. Let me know if anyone h
     - A lot of us are just starting app development, so don't hesitate to reach out to your lead or a senior when in trouble
     - If Stack Overflow fails, we're here
 
+---
 
 ## Reason for a management tree
 A management tree is established so that not every problem goes to one person. If you have any problem or doubt about how to do things, you can be directed to the multitude of people in the tree to have it cleared. 
 
 A heirarchy is established to keep things efficient and not to overwhelm any one person. 
 
+---
    
 ## Preview of Our Development Process
 It goes without saying that any major undertaking requires planning beforehand. That is especially true for mobile development. I speak from experience when I say, you're headed for disaster if you don't plan out all your components, screens, backend, etc before you touch the keyboard. 
@@ -50,9 +54,6 @@ It goes without saying that any major undertaking requires planning beforehand. 
 For that reason, I gathered information on the process of app development with extensive research. 
 
 Here are the basic steps I found, we'll be using this process for all our projects. The goal is to give us a basic idea to work with while still allowing flexibility and creativity with the app.
-
-
----
 
 
 ### Step 1: Discovery
