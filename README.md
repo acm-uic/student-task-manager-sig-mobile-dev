@@ -16,10 +16,10 @@
 Here's the type of team enviroment I'm working to build. Let me know if anyone has suggestions.
 
 - Unity
-    - Working as one, single unit and acting as one. It's almost like the team is one person, but with multiple limbs. 
     - Some people will work more than others in some phases of the development process
     - The idea is to distribute work so it is managable, without trading off quality for less effort
     - Which means you are putting in less effort as an indvidual, but the app being made is still a robust one
+    - Team members make up for each other's shortcomings
       
 - Leadership
     - Everyone should strive to be a leader.
