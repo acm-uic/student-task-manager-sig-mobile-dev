@@ -83,7 +83,7 @@ We have a great idea, but is it possible? This is the stage where...
 > If we can't find solutions to the problems we think of, we go back to Step 1
 
 
----
+--
 
 
 ### Step 3: Design
@@ -98,7 +98,7 @@ Now we visualize it. This is the state where...
   - Everyone pitches in and requests changes to the designers
 
 
----
+--
 
 
 ### Step 4: Backend
@@ -114,7 +114,7 @@ We figure out how we make it work behind the screens. This is the stage where...
   - Make them easily readable for the rest of the team
 
 
----
+--
 
 
 ### Step 5: Frontend
@@ -133,7 +133,7 @@ It's time to work off the hard work of the backend programmers. This is the stag
   - Fullstack lead goes through the code and finds errors if there is a problem between connecting the frontend and backend
 
 
----
+--
 
 
 ### Step 6: Testing
@@ -148,8 +148,7 @@ The app's done! But is it really? This is the stage where...
 > If the tester(s) find any problems, they direct them to the appropriate team/lead so it can be solved
 
 
-
----
+--
 
 
 ### Step 7: Publication
