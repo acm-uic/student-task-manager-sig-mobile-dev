@@ -178,5 +178,5 @@ We repeat this process until we complete the app.
 
 It is of importance that the lead considers the schedule and timings of their team, and organizes work around that. The lead should be talking to their team and making sure everyone's doing good, and no problems are arising.
 
->![Note]
+> ![Note]
 > This entire process assumes that everyone voices any hardships that occur during the process. So if the timeline collides with your schedule, or if something comes up and hinders your ability to complete assignments on time, speak up!
