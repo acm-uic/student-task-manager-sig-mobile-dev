@@ -3,7 +3,6 @@
   <img src="https://user-images.githubusercontent.com/74038190/212749443-0810e511-4f46-4492-96aa-3c110d7bc41a.gif" width=300 height=300/>
 </p>
 
-<pre>
 ## New Members
 
 > [!IMPORTANT]
@@ -160,5 +159,3 @@ Now the app's really done. This is the stage where...
   - We go through the publication process to get our app published
   - Marketing, if necessary. We go on social media and tell everyone that new app is available
   - Obviously, if we build an app for an organization such as UIC or someone else, the organization will take care of spreading the word
-
-</pre>
