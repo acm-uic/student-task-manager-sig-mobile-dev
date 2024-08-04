@@ -165,3 +165,18 @@ Now the app's really done. This is the stage where...
 ---
 
 ## Schedule
+
+For a workflow, the project manager and SIG Lead will come up with a timeline and section off the entire process in chunks. The timeline will then be run through the entire team to make sure everyone is good with it. 
+
+These chunks will then be given to each lead (Frontend and Backend) to complete. Each chunk will take a set amount of time to complete, predetermined by the timeline. 
+
+For example, an assignment to complete a screen in one week can be given to the frontend lead. The frontend lead would then go to their team and organize the frontend developers in the appropriate manner. The manner in which it is done is up to the frontend team, as long as it gets done within a week. 
+
+Another instance, an assignment to code a set of functions to fetch data from the backend can be given to the backend lead. The backend lead then organizes everything to make sure it gets done within a week. 
+
+We repeat this process until we complete the app. 
+
+It is of importance that the lead considers the schedule and timings of their team, and organizes work around that. The lead should be talking to their team and making sure everyone's doing good, and no problems are arising.
+
+>![Note]
+> This entire process assumes that everyone voices any hardships that occur during the process. So if the timeline collides with your schedule, or if something comes up and hinders your ability to complete assignments on time, speak up!
