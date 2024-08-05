@@ -12,32 +12,18 @@
 > DM **ani_bytes** at Discord if you need the invite.
 
 ---
-
+## Goals
+- LinkedIn -> Beef up the experience section on LinkedIn with the apps we build.
+- Develop Transferable skills -> Working on a team to build an app, learning new coding languages, managing workload along with college. What else can recruiters ask for?
+- Monetization -> Obviously, once we gain momentum and experience, this doorway opens.
+- Make a name -> Create apps for great causes, create popular apps, etc
+  
 ## Team Culture and Values
 Here's the type of team enviroment I'm working to build. Let me know if anyone has suggestions.
 
-- Unity
-    - Some people will work more than others in some phases of the development process
-    - The idea is to distribute work so it is managable, without trading off quality for less effort
-    - Which means you are putting in less effort as an indvidual, but the app being made is still a robust one
-    - Team members make up for each other's shortcomings
-      
-- Leadership
-    - Everyone should strive to be a leader.
-    - Creativity and discipline are greatly valued.
-    - Leads will have the flexibility to work in any way they want to achieve the result, each team will be its own entity with its own way of doing things.
-    - Work to bring yourself to the top, and take everyone around you for the ride.
-      
-- Flexibility
-    - A lot of us are nearing the end of college, and this means, not much free time
-    - With this in mind, a lot of the work we do can be done at your own time
-    - I cannot guarantee no deadlines, but you can be sure you will know well in advance if something needs to get done
-    - Work that's flexible to your schedule is a top priority
-
-- Mentorship
-    - We are very lucky to have a lot of seniors in our group, and they have a lot of wisdom
-    - A lot of us are just starting app development, so don't hesitate to reach out to your lead or a senior when in trouble
-    - If Stack Overflow fails, we're here
+- Flexibility -> Being in college means less time. Making sure indviduals have flexibility on when they can complete work is a priority.
+- Assisstance -> Help each other through problems and rely on the team
+- Competitive -> Code apps with the intent to be the best on the market, no matter your experience level
 
 ---
    
