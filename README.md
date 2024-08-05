@@ -38,6 +38,7 @@ Here are the basic steps I found, we'll be using this process for all our projec
 
 > [!TIP]
 > If a question or doubt ever crosses your brain, you should ask your fellow teammates and lead first. Most times, your lead is more suited to answer your question.
+
 > [!TIP]
 > Leads, if any problems arise, you can go to the SIG Leader and project manager.
 
