@@ -202,6 +202,16 @@ Leads will coordinate their respective team of devs to get the assignment done b
 > [!IMPORTANT]
 > Notice how each team only has to work for one to two weeks in the process. That's the entire point of this structure. After your week(s), you'll only need to work when problems come up and you are consulted.
 
+### Meeting Times
+There is no set meeting time as of now, since each team is going to operate on their own and try to solve their own problems. Most of our collaboration will be over Git.
+
+We'll be using Discord VC to clear any doubts on coding on the indvidual level. For example, if a developer has a question they can't wrap their head around, they can contact their lead and get on vc/DM them to get it cleared. 
+
+Additionally, groups (frontend, backend, leads, etc) may meet over VC if it's neccessary, that's completely up to each indvidual team. 
+
+During major events (like launching of an app), a in-person hangout/meeting or a whole group VC with everyone may be organized so we can celebrate/discuss a matter. You'll be notified of such events a lot of time in advance.
+
+Bottom line: We won't be having any set schedule for meeting times since it's not always necessary. If it is necessary, you'll be notified well in advance. 
 
 ---
 
