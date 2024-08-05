@@ -117,13 +117,14 @@ It's time to work off the hard work of the backend programmers. This is the stag
 --
 
 
-### Step 6: Testing
+### Step 6: Testing and Refining
 - Roles involved
   - Everyone
 
 The app's done! But is it really? This is the stage where...
   - Tester goes through every screen and uses every feature
   - Tester tries to use the app in different devices to see if the screen changes dynamically based on available screen space
+  - Everyone voices opinions on how the app could be better
 
 > [!NOTE]
 > If the tester(s) find any problems, they direct them to the appropriate team/lead so it can be solved
@@ -132,12 +133,15 @@ The app's done! But is it really? This is the stage where...
 --
 
 
-### Step 7: Publication
+### Step 7: Publication Testing and Publishing
 - Roles involved
   - Everyone
 
 Now the app's really done. This is the stage where...
   - We go through the publication process to get our app published
+  - This requires another round of testing where we need to run a closed app test (Our app is available on the store for a select amount of people)
+  - These select people will then test the app and get back to us. If everything's good, we go forward and get our app published.
+  
   - Marketing, if necessary. We go on social media and tell everyone that new app is available
   - Obviously, if we build an app for an organization such as UIC or someone else, the organization will take care of spreading the word
 
