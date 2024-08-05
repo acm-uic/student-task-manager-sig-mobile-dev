@@ -37,10 +37,10 @@ For that reason, I gathered information on the process of app development with e
 Here are the basic steps I found, we'll be using this process for all our projects. The goal is to give us a basic idea to work with while still allowing flexibility and creativity with the app.
 
 > [!TIP]
-> If a coding related doubt ever comes up, you should ask Stack Overflow, your teammates, lead, and SIG Leader in that order. Most times, your lead is more suited to answer your question since they are more knowledgable on the specific subject.
+> If a coding related doubt ever comes up, you should ask Stack Overflow, your teammates, lead, and SIG Leader in that order.
 
 > [!TIP]
-> Leads, if any problems arise, you can go to the SIG Leader and project manager.
+> Leads, if any serious problems arise, you can go to the SIG Leader and project manager.
 
 > [!TIP]
 > If you still have a doubt after asking the lead, then you can go ahead and ask anyone on the team.
