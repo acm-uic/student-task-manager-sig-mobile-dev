@@ -22,8 +22,10 @@
 Here's the type of team enviroment I'm working to build. Let me know if anyone has suggestions.
 
 - Flexibility -> Being in college means less time. Making sure indviduals have flexibility on when they can complete work is a priority.
-- Assisstance -> Help each other through problems and rely on the team
+- Assisstance -> Help each other through problems and rely on the team. Build friendships with like-minded people on the team.
 - Competitive -> Code apps with the intent to be the best on the market, no matter your experience level
+- Continious Learning -> Once we get done with one language, we move to another harder one.
+- Discipline -> Get it done regardless of motivation. That's how we go to the top, by doing things that not everyone is willing to do.
 
 ---
    
