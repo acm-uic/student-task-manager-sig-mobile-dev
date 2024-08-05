@@ -170,6 +170,15 @@ SIG leader and Project Manager come up with a timeline -->
 Timeline is given to the leads --> 
 Leads will coordinate their respective team of devs to get the assignment done based on the time given
 
+> [!NOTE]
+> Any problems with the schedule/ability to complete assignment should be communicated
+
+> [!IMPORTANT]
+> The lead needs to consider the schedule and timings of their team, and organizes work around that. The lead should be talking to their team and making sure everyone's doing good, and no problems are arising.
+
+> [!Note]
+> This entire process assumes that everyone voices any hardships that occur during the process. So if the timeline collides with your schedule, or if something comes up and hinders your ability to complete assignments on time, speak up!
+
 ### This is what a sample timeline could look like:
 
 1. 1 week -> Design team - Draw up all screens based on your creativity and imagination
@@ -188,13 +197,25 @@ Leads will coordinate their respective team of devs to get the assignment done b
 > SIG Lead: I'll be all over the place helping out wherever the most pressing problem is. So leads please reach out if assisstance/more manpower is needed.
 
 > [!NOTE]
-> Project Manager: You'll be adjusting the timeline based on complaints/concerns from the entire team, and also prioritizing tasks as neccessary. You'll also be available if any extra manpower is needed. 
-
-> [!NOTE]
-> Any problems with the schedule/ability to complete assignment should be communicated
+> Project Manager: You'll be adjusting the timeline based on complaints/concerns from the entire team, and also prioritizing tasks as neccessary. You'll also be available if any extra manpower is needed.
 
 > [!IMPORTANT]
-> The lead needs to consider the schedule and timings of their team, and organizes work around that. The lead should be talking to their team and making sure everyone's doing good, and no problems are arising.
+> Notice how each team only has to work for one to two weeks in the process. That's the entire point of this structure. After your week(s), you'll only need to work when problems come up and you are consulted.
 
-> [!Note]
-> This entire process assumes that everyone voices any hardships that occur during the process. So if the timeline collides with your schedule, or if something comes up and hinders your ability to complete assignments on time, speak up!
+
+---
+
+## Tools and Languages
+These are the languages and tools we'll be using for our very first project
+
+- Flutter -> Frontend
+- Dart -> Backend
+- GetX -> State Management
+- SQLite -> Database
+- Git -> Sharing and peer coding
+- VSCode -> Collaborative coding with Microsoft Live Share and text editor
+
+
+
+
+
