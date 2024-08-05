@@ -36,6 +36,9 @@ For that reason, I gathered information on the process of app development with e
 
 Here are the basic steps I found, we'll be using this process for all our projects. The goal is to give us a basic idea to work with while still allowing flexibility and creativity with the app.
 
+> [!TIP]
+> If a question or doubt ever crosses your brain, you should ask your fellow teammates and lead first. If it still isn't solved, you can ask the SIG Leader and project manager. The idea is that the more serious a problem is, the higher it is up the tree. This way, we can focus on problems based on their priority level. 
+
 
 ### Step 1: Discovery
 - Roles involved:
@@ -164,8 +167,8 @@ Leads will coordinate their respective team of devs to get the assignment done b
 > [!NOTE]
 > Any problems with the schedule/ability to complete assignment should be communicated
 
-> [!ALERT]
-> It is of importance that the lead considers the schedule and timings of their team, and organizes work around that. The lead should be talking to their team and making sure everyone's doing good, and no problems are arising.
+> [!IMPORTANT]
+> The lead needs to consider the schedule and timings of their team, and organizes work around that. The lead should be talking to their team and making sure everyone's doing good, and no problems are arising.
 
 > [!Note]
 > This entire process assumes that everyone voices any hardships that occur during the process. So if the timeline collides with your schedule, or if something comes up and hinders your ability to complete assignments on time, speak up!
