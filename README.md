@@ -170,6 +170,26 @@ SIG leader and Project Manager come up with a timeline -->
 Timeline is given to the leads --> 
 Leads will coordinate their respective team of devs to get the assignment done based on the time given
 
+### This is what a sample timeline could look like:
+
+1. 1 week -> Design team - Draw up all screens based on your creativity and imagination
+2. 4 days -> Design team - Design is presented to the team and designer makes adjustments based on what everyone thinks
+3. 2 weeks -> Backend team - Backend team creates functions requierd to make features possible
+4. 3 week -> Frontend team - Frontend team codes the screens and connects buttons and user input to backend
+5. 1 week -> Tester - Tester goes through every screen and tests features
+6. 2 weeks -> Everyone - Reiterate through necessary steps and consult appropriate teams to get bugs fixed
+7. 2 weeks -> SIG Leader and project manager - Closed testing begins
+8. 1 week -> SIG Leader and project manager - Steps to publish are taken and the app is launched
+
+> [!NOTE]
+> Fullstack lead: Throughout the entire process, you will be consulted about database/fetching issues from the backend and frontend lead. You will work to make sure everything's working smoothly and data is being fetched optimally and displayed in the front properly.
+
+> [!NOTE]
+> SIG Lead: I'll be all over the place helping out wherever the most pressing problem is. So leads please reach out if assisstance/more manpower is needed.
+
+> [!NOTE]
+> Project Manager: You'll be adjusting the timeline based on complaints/concerns from the entire team, and also prioritizing tasks as neccessary. You'll also be available if any extra manpower is needed. 
+
 > [!NOTE]
 > Any problems with the schedule/ability to complete assignment should be communicated
 
