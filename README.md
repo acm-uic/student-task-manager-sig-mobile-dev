@@ -42,11 +42,8 @@ Here are the basic steps I found, we'll be using this process for all our projec
 > [!TIP]
 > Leads, if any serious problems arise, you can go to the SIG Leader and project manager.
 
-> [!TIP]
-> If you still have a doubt after asking the lead, then you can go ahead and ask anyone on the team.
-
 > [!NOTE]
-> The idea is to push teams to solve their own problems and grow, while also making sure one person isn't answering everything.
+> The idea is to push indviduals to solve their own problems and grow, while also making sure one person isn't answering everything.
 
 
 ### Step 1: Discovery
