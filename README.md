@@ -37,7 +37,9 @@ For that reason, I gathered information on the process of app development with e
 Here are the basic steps I found, we'll be using this process for all our projects. The goal is to give us a basic idea to work with while still allowing flexibility and creativity with the app.
 
 > [!TIP]
-> If a question or doubt ever crosses your brain, you should ask your fellow teammates and lead first. If it still isn't solved, you can ask the SIG Leader and project manager. The idea is that the more serious a problem is, the higher it is up the tree. This way, we can focus on problems based on their priority level. 
+> If a question or doubt ever crosses your brain, you should ask your fellow teammates and lead first. Most times, your lead is more suited to answer your question.
+> [!TIP]
+> Leads, if any problems arise, you can go to the SIG Leader and project manager.
 
 
 ### Step 1: Discovery
