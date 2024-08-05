@@ -37,7 +37,7 @@ For that reason, I gathered information on the process of app development with e
 Here are the basic steps I found, we'll be using this process for all our projects. The goal is to give us a basic idea to work with while still allowing flexibility and creativity with the app.
 
 > [!TIP]
-> If a coding related doubt ever comes up, you should ask your lead first. Most times, your lead is more suited to answer your question since they are more knowledgable on the specific subject.
+> If a coding related doubt ever comes up, you should ask your teammates, lead, and SIG Leader in that order. Most times, your lead is more suited to answer your question since they are more knowledgable on the specific subject.
 
 > [!TIP]
 > Leads, if any problems arise, you can go to the SIG Leader and project manager.
@@ -46,7 +46,7 @@ Here are the basic steps I found, we'll be using this process for all our projec
 > If you still have a doubt after asking the lead, then you can go ahead and ask anyone on the team.
 
 > [!NOTE]
-> The idea is to push teams to solve their own problems and grow, while also organizing problems based on priority.
+> The idea is to push teams to solve their own problems and grow, while also making sure one person isn't answering everything.
 
 
 ### Step 1: Discovery
