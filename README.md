@@ -168,7 +168,7 @@ How Scheduling Will Work:
 Simplified:
 SIG leader and Project Manager come up with a timeline --> 
 Timeline is given to the leads --> 
-Leads will coordinate their respective team of devs to get the assignment done based on the timeline
+Leads will coordinate their respective team of devs to get the assignment done based on the time given
 
 > [!NOTE]
 > Any problems with the schedule/ability to complete assignment should be communicated
