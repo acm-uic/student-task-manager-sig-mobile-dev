@@ -45,7 +45,7 @@ Here are the basic steps I found, we'll be using this process for all our projec
 > [!TIP]
 > If you still have a doubt after asking the lead, then you can go ahead and ask anyone on the team.
 
-> ![NOTE]
+> [!NOTE]
 > The idea is to push teams to solve their own problems and grow, while also organizing problems based on priority.
 
 
