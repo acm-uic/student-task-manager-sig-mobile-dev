@@ -152,8 +152,10 @@ How Scheduling Will Work:
 - The sections will have deadlines based on how time-consuming they are (You will have a lot of time to get it done)
 - We complete each section based on the timeline until the entire app is complete
 
-Workflow:
-SIG leader and Project Manager come up with a timeline --> Timeline is given to the leads --> Leads will coordinate their respective team of devs to get the assignment done based on the timeline
+Simplified:
+SIG leader and Project Manager come up with a timeline --> 
+Timeline is given to the leads --> 
+Leads will coordinate their respective team of devs to get the assignment done based on the timeline
 
 > [!NOTE]
 > Any problems with the schedule/ability to complete assignment should be communicated
