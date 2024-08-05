@@ -160,7 +160,7 @@ Now the app's really done. This is the stage where...
 
 ## Schedule and Workflow
 
-How Scheduling Will Work:
+### How scheduling will work:
 - The entire app process will be chuncked off into sections
 - The sections will have deadlines based on how time-consuming they are (You will have a lot of time to get it done)
 - We complete each section based on the timeline until the entire app is complete
