@@ -203,10 +203,10 @@ Leads will coordinate their respective team of devs to get the assignment done b
 > Notice how each team only has to work for one to two weeks in the process. That's the entire point of this structure. After your week(s), you'll only need to work when problems come up and you are consulted.
 
 ### Meeting Times
-There will be physical, in-person meetings as the schedule of everyone permits. The timings for these meetings will be established well before, so we can get everyone everyone there. They won't be frequent, but they will be important since they'll be information/review sessions. 
+There will be **physical, in-person** meetings as the schedule of everyone permits. The timings for these meetings will be established well before, so we can get everyone there. They won't be frequent, but they will be important since they'll be information/review sessions. 
 
 
-There is no set online meeting time as of now, since each team is going to operate on their own and try to solve their own problems. Most of our collaboration will be over Git.
+There is no set **online** meeting time as of now, since each team is going to operate on their own and try to solve their own problems. Most of our collaboration will be over Git.
 
 We'll be using Discord VC to clear any doubts on coding on the indvidual level. For example, if a developer has a question they can't wrap their head around, they can contact their lead and get on vc/DM them to get it cleared. 
 
