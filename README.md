@@ -232,6 +232,7 @@ These are the languages and tools we'll be using for our very first project
 ---
 
 ## Team structure and Role Descriptions
+A well established structure is essential if we want to finish our tasks quickly and get our questions answered promptly. Here's a view of how our team's going to look like: 
 
 
 
