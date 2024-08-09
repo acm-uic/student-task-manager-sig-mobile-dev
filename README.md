@@ -229,6 +229,11 @@ These are the languages and tools we'll be using for our very first project
 - VSCode -> Collaborative coding with Microsoft Live Share and text editor
 
 
+---
+
+## Team structure and Role Descriptions
+
+
 
 
 
