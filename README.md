@@ -236,7 +236,7 @@ A well established structure is essential if we want to finish our tasks quickly
 
 I made this a sandbox app because I'd like newer members coming into app development to get a feel of what it looks like. Don't be afraid if you are overwhelmed, just focus on one thing at a time. 
 
-It's not nearly as hard as it looks. I myself did this also to learn Flutter, because I don't have much experience.
+It's not nearly as hard as it looks. I myself did this also to learn Flutter, because I don't have much experience with Flutter and Dart.
 
 Be sure to play around with the code! Your project will be forked and my work nor others' will be affected. This is the main reason I made this a sandbox code instead of a plain old document. I want members to play around with it and change things to see what it does. 
 
