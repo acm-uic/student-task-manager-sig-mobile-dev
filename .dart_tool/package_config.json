@@ -62,6 +62,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "get",
+      "rootUri": "file:///C:/Users/Anirudh/AppData/Local/Pub/Cache/hosted/pub.dev/get-4.6.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
       "name": "leak_tracker",
       "rootUri": "file:///C:/Users/Anirudh/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.5",
       "packageUri": "lib/",
@@ -170,7 +176,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-10-21T17:49:55.291657Z",
+  "generated": "2024-10-21T17:12:11.973744Z",
   "generator": "pub",
   "generatorVersion": "3.5.0",
   "flutterRoot": "file:///C:/Users/Anirudh/Documents/myapps/Flutter/flutter",
