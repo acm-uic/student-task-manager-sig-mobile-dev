@@ -17,25 +17,25 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'UIC'),
+      home: const MyPage(title: 'UIC'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class MyPage extends StatefulWidget {
+  const MyPage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePage();
+  State<MyPage> createState() => _MyPage();
 }
 
-class _MyHomePage extends State<MyHomePage> {
+class _MyPage extends State<MyPage> {
 
-  int selectedIndex = 0;
+  int selectedIndex = 0; // For the bottom tab navigator
 
-  void onItemTapped(int index) {
+  void onItemTapped(int index) { // For the bottom tab navigator
     setState(() {
       selectedIndex = index;
     });
@@ -43,14 +43,55 @@ class _MyHomePage extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Widget page;
+    switch (selectedIndex) {
+      case 0:
+        page = const MyHomePage();
+      case 1:
+        page = const ThoughtsPage();
+      case 2: 
+        page = const GymPage();
+      default:
+        throw UnimplementedError('no widget for $selectedIndex');
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: const Center(
-        child: Text("Welcome to UIC!")
+      body: Center(
+        child: page,
       ),
       bottomNavigationBar: bottomTabNavigator(onItemTapped, selectedIndex),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text("Welcome to UIC!")
+    );
+  }
+}
+
+class ThoughtsPage extends StatelessWidget {
+  const ThoughtsPage({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text("Thoughts Page"),
+    );
+  }
+}
+
+class GymPage extends StatelessWidget {
+  const GymPage({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text("Gym Page"),
     );
   }
 }
