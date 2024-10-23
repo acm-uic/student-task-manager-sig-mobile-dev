@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-// import 'package:student_task_manager/main.dart';
 
-Widget bottomTabNavigator() {
+Widget bottomTabNavigator(Function(int) onItemTapped, int selectedIndex) {
+
   return BottomNavigationBar(
     items:
       const <BottomNavigationBarItem>[
@@ -18,7 +18,8 @@ Widget bottomTabNavigator() {
           label: "Gym",
         ),
       ],
-    currentIndex: 0,
+    currentIndex: selectedIndex,
     selectedItemColor: Colors.red,
+    onTap: onItemTapped,
   );
 }

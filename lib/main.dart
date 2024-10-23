@@ -22,23 +22,35 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
 
   @override
+  State<MyHomePage> createState() => _MyHomePage();
+}
 
+class _MyHomePage extends State<MyHomePage> {
+
+  int selectedIndex = 0;
+
+  void onItemTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(widget.title),
       ),
       body: const Center(
         child: Text("Welcome to UIC!")
       ),
-      // bottomTabNavigator() is a component from lib/widgets/general/bottom_tab_navigator.dart
-      bottomNavigationBar: bottomTabNavigator(),
+      bottomNavigationBar: bottomTabNavigator(onItemTapped, selectedIndex),
     );
   }
 }
