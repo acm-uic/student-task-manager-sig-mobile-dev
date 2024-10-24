@@ -22,16 +22,16 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyPage extends StatefulWidget {
+class MyHomePage extends StatefulWidget {
   const MyPage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyPage> createState() => _MyPage();
+  State<MyPage> createState() => _MyHomePage();
 }
 
-class _MyPage extends State<MyPage> {
+class _MyHomePage extends State<MyHomePage> {
 
   int selectedIndex = 0; // For the bottom tab navigator
 
@@ -66,8 +66,8 @@ class _MyPage extends State<MyPage> {
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
   @override
   Widget build(BuildContext context) {
     return const Center(
