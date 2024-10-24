@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:student_task_manager/screens/home.dart';
 import 'widgets/general/bottom_tab_navigator.dart';
 
 void main() {
@@ -17,28 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'UIC'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: const Center(
-        child: Text("Welcome to UIC!")
-      ),
-      // bottomTabNavigator() is a component from lib/widgets/general/bottom_tab_navigator.dart
-      bottomNavigationBar: bottomTabNavigator(),
+      home: const MainHomePage(),
     );
   }
 }
