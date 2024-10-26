@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../widgets/general/bottom_tab_navigator.dart';
+
 
 class GymPage extends StatelessWidget {
   const GymPage({ super.key });
@@ -6,10 +8,11 @@ class GymPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (
-      const Scaffold (
-        body: Center (
+        Scaffold (
+        body: const Center (
           child: Text ("Let's get them gains!")
-        )
+        ),
+        bottomNavigationBar: bottomTabNavigator(),
       )
     );
   }
