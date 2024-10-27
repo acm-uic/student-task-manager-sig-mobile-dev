@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:student_task_manager/screens/home.dart';
 import 'screens/gym.dart';
 import 'screens/thoughts.dart';
-import 'widgets/general/bottom_tab_navigator.dart';
 
 void main() {
   runApp(const MyApp());

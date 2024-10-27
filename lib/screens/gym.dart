@@ -9,11 +9,15 @@ class GymPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return (
         Scaffold (
-        body: const Center (
-          child: Text ("Let's get them gains!")
-        ),
-        bottomNavigationBar: bottomTabNavigator(),
-      )
-    );
+          appBar: AppBar(
+            title: Text("Gym Page"),
+            centerTitle: true,
+          ),
+          body: const Center (
+            child: Text ("Let's get them gains!")
+          ),
+          bottomNavigationBar: bottomTabNavigator(),
+        )
+      );
+    }
   }
-}

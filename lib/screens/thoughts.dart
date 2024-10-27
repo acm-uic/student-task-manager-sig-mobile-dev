@@ -9,6 +9,10 @@ class ThoughtsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return (
        Scaffold (
+        appBar: AppBar(
+          title: Text("Thoughts Page"), 
+          centerTitle: true,
+        ),
         body: const Center (
           child: Text ("Let's think big thoughts.")
         ),
