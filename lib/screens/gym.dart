@@ -5,12 +5,8 @@ class GymPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (
-      const Scaffold (
-        body: Center (
-          child: Text ("Let's get them gains!")
-        )
-      )
-    );
+    return Scaffold (
+      appBar: AppBar(title: Text("Gym Page"),centerTitle: true,),// created an app bar for the gym screen
+      body: Center(child:Text("Let's get them gains!"),),); // placeholder text in center of the screen
   }
 }

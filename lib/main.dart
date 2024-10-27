@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:student_task_manager/screens/home.dart';
-import 'widgets/general/bottom_tab_navigator.dart';
 
 void main() {
   runApp(const MyApp());
