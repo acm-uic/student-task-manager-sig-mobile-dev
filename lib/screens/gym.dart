@@ -10,7 +10,7 @@ class GymPage extends StatelessWidget {
     return (
         Scaffold (
           appBar: AppBar(
-            title: Text("Gym Page"),
+            title: Text("UIC Task Manager"),
             centerTitle: true,
           ),
           body: const Center (

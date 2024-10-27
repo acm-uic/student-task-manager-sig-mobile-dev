@@ -10,7 +10,7 @@ class ThoughtsPage extends StatelessWidget {
     return (
        Scaffold (
         appBar: AppBar(
-          title: Text("Thoughts Page"), 
+          title: Text("UIC Task Manager"),
           centerTitle: true,
         ),
         body: const Center (
