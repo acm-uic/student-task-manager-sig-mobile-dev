@@ -9,6 +9,7 @@ class MainHomePage extends StatelessWidget {
     return Scaffold (
       appBar: AppBar(
           title: Text("UIC Task Manager"),
+          backgroundColor: Colors.red,
           centerTitle: true,
       ),
       body: const Center(

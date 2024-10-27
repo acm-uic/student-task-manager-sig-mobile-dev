@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../widgets/general/bottom_tab_navigator.dart';
 
 class ThoughtsPage extends StatelessWidget {
@@ -11,6 +10,7 @@ class ThoughtsPage extends StatelessWidget {
        Scaffold (
         appBar: AppBar(
           title: Text("UIC Task Manager"),
+          backgroundColor: Colors.red,
           centerTitle: true,
         ),
         body: const Center (
