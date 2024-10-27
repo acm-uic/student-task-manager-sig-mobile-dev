@@ -7,7 +7,17 @@ class MainHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold (
-      appBar: AppBar(title: Text("Home Page"),centerTitle: true,),// created an app bar for the home screen
-      body: Center(child:Text("Welcome to the UIC Student Task Manager!"),),); // placeholder text in center of the screen
-}
+      appBar: AppBar(
+          title: Text("UIC Task Manager"),
+          backgroundColor: Colors.red,
+          centerTitle: true,
+      ),
+      body: const Center(
+        child: Text(
+          "Welcome to the UIC Student Task Manager!"
+        ),
+      ),
+      bottomNavigationBar: bottomTabNavigator(),
+    ); // placeholder text in center of the screen
+  }
 }
