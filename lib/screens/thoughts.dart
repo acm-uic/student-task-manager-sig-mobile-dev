@@ -11,18 +11,6 @@ class ThoughtsPage extends StatefulWidget {
 
 class ThoughtsPageState extends State<ThoughtsPage> {
   String tag = '';
-  List<Thought> thoughts = [];
-  List<Thought> get filteredThoughts {
-    return tag.isEmpty
-        ? thoughts
-        : thoughts.where((thought) => thought.tag == tag).toList()
-      ..sort((a, b) => a.content.compareTo(b.content));
-  }
-
-  void thoughtCategory() {
-    // Add functionality here, such as navigating or filtering thoughts
-    print("Category filter tapped");
-  }
 
   void addThought() {
     // TODO: create a popup screen for adding new thought
@@ -40,56 +28,63 @@ class ThoughtsPageState extends State<ThoughtsPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Stack(
+        child: Column(
           children: [
-            SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Search',
-                      prefixIcon: const Icon(Icons.search_rounded),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(color: Colors.black, width: 2.0),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(color: Colors.black, width: 2.0), // Border when focused
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Align(
-                      alignment: Alignment.topLeft,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 12),
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.circular(30), // Rounded corners
-                          border: Border.all(
-                              color: const Color.fromARGB(255, 0, 0, 0),
-                              width: 2
-                          ), // Border color and width
-                        ),
-                        child: TagDropdown(
-                            tag: tag,
-                            onChanged: (String? value) {
-                              setState(() {
-                                tag = value ?? '';
-                              });
-                            },
-                          ),
-                      )),
-                  const SizedBox(height: 100),
-                  const Align(
-                    alignment: Alignment.center,
-                    child: Text("Let's think big thoughts."),
-                  ),
-                ],
+            const Text(
+              'Thought Tank',
+              style: TextStyle(
+                fontSize: 25,
               ),
             ),
+            const SizedBox(height: 20),
+            TextField(
+              decoration: InputDecoration(
+                hintText: 'Search',
+                prefixIcon: const Icon(Icons.search_rounded),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: const BorderSide(color: Colors.black, width: 2.0),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: const BorderSide(color: Colors.black, width: 2.0), // Border when focused
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            Align(
+                alignment: Alignment.topLeft,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  decoration: BoxDecoration(
+                    borderRadius:
+                        BorderRadius.circular(30), // Rounded corners
+                    border: Border.all(
+                        color: const Color.fromARGB(255, 0, 0, 0),
+                        width: 2
+                    ), // Border color and width
+                  ),
+                  child: TagDropdown(
+                      tag: tag,
+                      onChanged: (String? value) {
+                        setState(() {
+                          tag = value ?? '';
+                        });
+                      },
+                    ),
+                )),
+                const SizedBox(height: 20),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Let\'s think big thoughts'),
+                  ]
+                )
+              ),
+            ),
+            const SizedBox(height: 10),
             Align(
               alignment: Alignment.bottomRight,
               child: ElevatedButton.icon(
@@ -97,7 +92,7 @@ class ThoughtsPageState extends State<ThoughtsPage> {
                 icon: const Icon(Icons.add),
                 label: const Text('Add Thought'),
               ),
-            )
+            ),
           ],
         ),
       ),
