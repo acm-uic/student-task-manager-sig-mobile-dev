@@ -74,6 +74,38 @@ class ThoughtsPageState extends State<ThoughtsPage> {
                     ),
                 )),
                 const SizedBox(height: 20),
+                //Add CategoryBox for different thought categories
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  width: 80,
+                  padding: const EdgeInsets.all(15.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.horizontal(),
+                    border: Border.all(color: Colors.black, width:2),
+                  ),
+                  child: const Text(
+                    'Work', //hardcoded text for the category
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                //Box for the thought input
+                Container(
+                  padding: const EdgeInsets.all(15.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.horizontal(),
+                    border: Border.all(color: Colors.black, width:2),
+                  ),
+                  child: const Text(
+                   'My boss was really mean today...', //hardcoded text for thought box
+                   style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ],
+            ),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
