@@ -176,10 +176,10 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-11-06T18:13:15.490143Z",
+  "generated": "2024-11-07T20:32:56.670715Z",
   "generator": "pub",
-  "generatorVersion": "3.5.3",
+  "generatorVersion": "3.5.4",
   "flutterRoot": "file:///Users/stan/development/flutter",
-  "flutterVersion": "3.24.3",
+  "flutterVersion": "3.24.4",
   "pubCache": "file:///Users/stan/.pub-cache"
 }
