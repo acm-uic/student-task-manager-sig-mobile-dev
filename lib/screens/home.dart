@@ -6,13 +6,25 @@ class MainHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (
-      Scaffold (
-        body: const Center (
-          child: Text ("Welcome to Home!")
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Welcome To Home!"), 
+            SizedBox(height: 20), 
+            ElevatedButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Button clicked!')),
+                );
+              },
+              child: Text('+'),
+            ),
+          ],
         ),
-        bottomNavigationBar: bottomTabNavigator(),
-      )
+      ),
+      bottomNavigationBar: bottomTabNavigator(),
     );
   }
 }
