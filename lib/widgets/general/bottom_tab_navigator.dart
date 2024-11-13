@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-
-Widget bottomTabNavigator(Function(int) onItemTapped, int selectedIndex) {
-
-  return BottomNavigationBar(
 import 'package:get/get.dart';
 import 'package:student_task_manager/widgets/general/bottom_navigator_controller.dart';
-// import 'package:student_task_manager/main.dart';
 
 // Changed Navigator to utilize a state controller to maintain the current page
 // Creating Obx state that manages nav bar.

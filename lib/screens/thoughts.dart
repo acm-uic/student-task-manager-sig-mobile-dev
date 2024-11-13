@@ -96,17 +96,17 @@ class ThoughtsPageState extends State<ThoughtsPage> {
                   padding: const EdgeInsets.all(15.0),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.horizontal(),
+                    borderRadius: const BorderRadius.horizontal(),
                     border: Border.all(color: Colors.black, width:2),
                   ),
                   child: const Text(
                    'My boss was really mean today...', //hardcoded text for thought box
-                   style: TextStyle(fontSize: 18),
+                   style: TextStyle(fontSize: 17),
                   ),
                 ),
               ],
             ),
-            Expanded(
+            const Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
