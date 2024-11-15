@@ -1,9 +1,10 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:student_task_manager/controllers/countController.dart';
 import '../widgets/general/bottom_tab_navigator.dart';
 
 class GymPage extends StatelessWidget {
   const GymPage({super.key});
-
   final int streak = 0;
 
   @override
@@ -49,13 +50,17 @@ class GymPage extends StatelessWidget {
                   icon: const Icon(Icons.local_fire_department),
                   color: Colors.orange,
                   onPressed: () {
-                    // Streak Code
+                    Get.find<CountController>().increment();
                   },
                 ),
-                Text(
-                  '$streak',
-                  style: const TextStyle(fontSize: 20),
-                ),
+                GetBuilder<CountController>(
+                    init: CountController(),
+                    builder: (controller) {
+                      return Text(
+                        '${controller.count}',
+                        style: const TextStyle(fontSize: 20),
+                      );
+                    }),
               ],
             ),
           ),
