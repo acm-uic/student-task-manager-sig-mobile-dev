@@ -2,62 +2,88 @@ import 'package:flutter/material.dart';
 import '../widgets/general/bottom_tab_navigator.dart';
 
 class MainHomePage extends StatelessWidget {
-  const MainHomePage({ super.key });
+  const MainHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold (
-      appBar: AppBar(
-          title: const Text("UIC Task Manager"),
-          backgroundColor: Colors.red,
-          centerTitle: true,
-      ),
-      body: Center(
-        child: sectionList(),
-      ),
-      bottomNavigationBar: bottomTabNavigator(),
-    ); // placeholder text in center of the screen
-  }
-}
-
-Widget sectionList() {
-  return ListView.builder(
-    itemCount: 5,
-    itemBuilder: (context, sectionIndex) {
-      return Column(
-        children: [
-          ListTile(
-            title: Text('Section $sectionIndex'),
+    return (DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar:  AppBar(
+          backgroundColor: Colors.white,
+          toolbarHeight: 150,
+          title: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+            Text(
+              "Tasks",
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 35,
+              ),
+            ),
+            const SizedBox(height: 20,),
+            Row(
+              children: [
+                Expanded(child: 
+                  TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Search',
+                      prefixIcon: const Icon(Icons.search_rounded),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide.none,
+                      ),
+                      fillColor: Colors.grey[100],
+                      filled: true,
+                    ),
+                  ),
+                ),
+                IconButton(
+                  icon: Icon(Icons.add_circle, color: Colors.red, size: 40,),
+                  onPressed: () {
+                    // add more task here??
+                  },
+                )
+              ]
+            )
+          ]),
+          bottom: const TabBar(
+            tabs: [
+              Tab(text: "Work"),
+              Tab(text: "College"),
+              Tab(text: "Personal"),
+            ],
+            labelColor: Colors.red,
+            indicator: UnderlineTabIndicator(
+              borderSide: BorderSide(
+                color: Colors.red, // Background color for selected tab
+                width: 2,
+              )
+            ),
           ),
-          subsectionList(sectionIndex),
-        ],
-      );
-    }
-  );
-}
+        ),
+        body: const TabBarView(
+          children: [
+            Center(child: 
+              // More components for work tab
+              Text('Work tasks')
+            ),
+            Center(child:
+              // More components for college tab 
+              Text('College tasks')
+            ),
+            Center(child: 
+              // More components for personal tab
+              Text('Personal tasks')
+            )
+          ],
+        ),
+        bottomNavigationBar: bottomTabNavigator(),
+      ))
+    );
+  }
 
-Widget subsectionList(int sectionIndex) {
-  return ListView.builder(
-    shrinkWrap: true,
-    physics: const ClampingScrollPhysics(),
-    itemCount: 5,
-    itemBuilder: (context, subsectionIndex) {
-      return subsectionTask(subsectionIndex);
-    },
-  );
-}
-
-Widget subsectionTask(int subsectionIndex) {
-  return Card(
-    clipBehavior: Clip.hardEdge,
-    child: InkWell(
-      splashColor: Colors.red.withAlpha(30),
-      onTap: () {
-        debugPrint('Card $subsectionIndex tapped.'); /* if needed: clicking on card goes here */
-      },
-      child: ListTile(
-        title: Text('Task $subsectionIndex'),
-      ),
-    ),
-  );
 }
