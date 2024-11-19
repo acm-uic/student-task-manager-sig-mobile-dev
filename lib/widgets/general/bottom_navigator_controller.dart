@@ -1,4 +1,3 @@
-
 import 'package:get/get.dart';
 
 class BottomNavigatorController extends GetxController {
