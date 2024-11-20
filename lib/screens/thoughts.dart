@@ -15,7 +15,7 @@ class ThoughtsPageState extends State<ThoughtsPage> {
   void addThought() {
     // TODO: create a popup screen for adding new thought
     //       The screen includes title, tags to choose, color picker,
-    //        a text field to enter thought, cancel and add button
+    //       a text field to enter thought, cancel and add button
   }
 
   @override
@@ -83,7 +83,7 @@ class ThoughtsPageState extends State<ThoughtsPage> {
                   padding: const EdgeInsets.all(15.0),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.horizontal(),
+                    borderRadius: const BorderRadius.horizontal(),
                     border: Border.all(color: Colors.black, width:2),
                   ),
                   child: const Text(
@@ -96,7 +96,7 @@ class ThoughtsPageState extends State<ThoughtsPage> {
                   padding: const EdgeInsets.all(15.0),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.horizontal(),
+                    borderRadius: const BorderRadius.horizontal(),
                     border: Border.all(color: Colors.black, width:2),
                   ),
                   child: const Text(
@@ -106,7 +106,7 @@ class ThoughtsPageState extends State<ThoughtsPage> {
                 ),
               ],
             ),
-            Expanded(
+            const Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
