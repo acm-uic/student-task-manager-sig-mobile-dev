@@ -1,22 +1,86 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+// import 'package:get/get_connect/http/src/utils/utils.dart';
 import '../widgets/general/bottom_tab_navigator.dart';
 
-class MainHomePage extends StatefulWidget {
-  const MainHomePage({super.key});
+class MainHomePageController extends GetxController {
+  RxMap<String, Map<String, List<String>>> taskList = {
+    'Work': {
+      'Today':['Wake up', 'Eat breakfast', 'Go to work'], 
+      'Tomorrow':['Task 3', 'Task 4'],
+    },
+    'College': {
+      'Today':['Do homework', 'Go to UIC'],
+    },
+    'Personal': {
+      'Today':['Do chores', 'Cook dinner'],
+    },
+  }.obs; // hard coded tasks
+  
+  String tab = 'Work';
 
-   @override
-  MainHomePageState createState() => MainHomePageState();
+  final TextEditingController searchController = TextEditingController();
+  final TextEditingController addTaskController = TextEditingController();
+
+  void addTaskButton(BuildContext context, String tab) {
+    showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('New Task'),
+          content: TextField(
+            controller: addTaskController,
+            decoration: const InputDecoration(
+              hintText: 'Enter task here',
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('Cancel'),
+              onPressed: () {
+                addTaskController.clear();
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text('Enter'),
+              onPressed: () {
+                debugPrint("Adding task to $tab");
+                taskList[tab]?['Today']?.add(addTaskController.text); // hard coded to 'Today' for now
+                taskList[tab]?['Today'] = taskList[tab]?['Today']?.toSet().toList() ?? []; // remove duplicates
+                taskList.refresh();
+                addTaskController.clear();
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void deleteTask(String tab, String section, int taskIndex) {
+    if (taskList[tab]?.containsKey(section) ?? false) {
+      taskList[tab]?[section]?.removeAt(taskIndex);
+      taskList.refresh();
+    }
+  }
 }
 
-class MainHomePageState extends State<MainHomePage> {
-  Map<String, List<String>> tasksBySections = {'Today':["Wake up", "Eat breakfast", "Go to UIC"], 'Tomorrow':["Task 4", "Task 5"]}; // hard coded for now
-  List<String> sections = ['Today', 'Tomorrow'];
 class MainHomePage extends StatelessWidget {
-  const MainHomePage({super.key});
+  MainHomePage({super.key});
+
+  final MainHomePageController mainController = Get.put(MainHomePageController());
 
   @override
   Widget build(BuildContext context) {
-    return (DefaultTabController(
+    return DefaultTabController(
       length: 3,
       child: Scaffold(
         appBar:  AppBar(
@@ -26,7 +90,7 @@ class MainHomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-            Text(
+            const Text(
               "Tasks",
               style: TextStyle(
                 color: Colors.black,
@@ -34,11 +98,13 @@ class MainHomePage extends StatelessWidget {
                 fontSize: 35,
               ),
             ),
-            const SizedBox(height: 20,),
+            const SizedBox(height: 20),
             Row(
               children: [
-                Expanded(child: 
+                Expanded(
+                  child: 
                   TextField(
+                    controller: mainController.searchController,
                     decoration: InputDecoration(
                       hintText: 'Search',
                       prefixIcon: const Icon(Icons.search_rounded),
@@ -52,22 +118,30 @@ class MainHomePage extends StatelessWidget {
                   ),
                 ),
                 IconButton(
-                  icon: Icon(Icons.add_circle, color: Colors.red, size: 40,),
+                  icon: const Icon(Icons.add_circle, color: Colors.red, size: 40),
                   onPressed: () {
-                    // add more task here??
+                    mainController.addTaskButton(context, mainController.tab);
                   },
                 )
               ]
             )
           ]),
-          bottom: const TabBar(
-            tabs: [
+          bottom: TabBar(
+            onTap: (index) {
+              debugPrint('Tab index: $index');
+              mainController.tab = ( // set tab to the corresponding string
+                index == 0 ? 'Work': 
+                index == 1 ? 'College': 
+                index == 2 ? 'Personal': 
+                throw Exception('Invalid tab index'));
+            },
+            tabs: const [
               Tab(text: "Work"),
               Tab(text: "College"),
               Tab(text: "Personal"),
             ],
             labelColor: Colors.red,
-            indicator: UnderlineTabIndicator(
+            indicator: const UnderlineTabIndicator(
               borderSide: BorderSide(
                 color: Colors.red, // Background color for selected tab
                 width: 2,
@@ -75,80 +149,87 @@ class MainHomePage extends StatelessWidget {
             ),
           ),
         ),
-        body: const TabBarView(
-          children: [
-            Center(child: 
-              // More components for work tab
-              Text('Work tasks')
-            ),
-            Center(child:
-              // More components for college tab 
-              Text('College tasks')
-            ),
-            Center(child: 
-              // More components for personal tab
-              Text('Personal tasks')
-            )
-          ],
-        ),
+        body: 
+            TabBarView(
+            children: [
+              Center(
+                // More components for work tab 
+                child: 
+                  taskListBuilder('Work'),   
+                  // Text('Work tasks')
+              ),
+              Center(
+                child: taskListBuilder('College'),
+                // More components for college tab 
+                // Text('College tasks')
+              ),
+              Center(
+                child: taskListBuilder('Personal'),
+                // More components for personal tab
+                // Text('Personal'),
+              ),
+            ],
+          ),
         bottomNavigationBar: bottomTabNavigator(),
-      ))
+      ),
     );
   }
-
 }
 
-Widget addTaskButton(BuildContext context, Map<String, List<String>> tasksBySections) {
-  return FloatingActionButton(
-    onPressed: () {
-      debugPrint('Add Task Button Pressed.');
-      taskBuilder(context, tasksBySections);
+Widget taskListBuilder(String tab) {
+  final MainHomePageController c = Get.find();
+  return Obx(() {
+    return ListView.builder(
+      itemCount: c.taskList[tab]?.length,
+      itemBuilder: (context, sectionIndex) {
+        return Column(
+          children: [
+            ListTile(
+              title: Text(
+                c.taskList[tab]?.keys.elementAt(sectionIndex) ?? '',
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            subsectionList(tab, sectionIndex, c.taskList[tab]?[c.taskList[tab]?.keys.elementAt(sectionIndex)]),
+          ],
+        );
+      }
+    );
+  });
+}
+
+Widget subsectionList(String tab, int sectionIndex, List<String>? tasks) {
+  return ListView.builder(
+    shrinkWrap: true,
+    physics: const ClampingScrollPhysics(),
+    itemCount: tasks?.length ?? 0, // sets itemCount to 0 if tasks is null
+    itemBuilder: (context, subsectionIndex) {
+      if(tasks == null || tasks.isEmpty) {
+        return const SizedBox(); // return empty container if no tasks
+      }
+      return subsectionTask(tab, sectionIndex, subsectionIndex);
     },
-    backgroundColor: Colors.red,
-    child: const Icon(Icons.add),
   );
 }
 
-final TextEditingController _controller = TextEditingController();
-
-Future<void> taskBuilder(BuildContext context, Map<String, List<String>> tasksBySections) {
-  
-  return showDialog<void>(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: const Text('New Task'),
-        content: TextField(
-          controller: _controller,
-          decoration: const InputDecoration(
-            hintText: 'Enter task here',
-          ),
+Widget subsectionTask(String tab, int sectionIndex, int subsectionIndex) {
+  final MainHomePageController c = Get.find();
+  return Card(
+    clipBehavior: Clip.hardEdge,
+    child: InkWell(
+      splashColor: Colors.red.withAlpha(30),
+      child: ListTile(
+        title: Text(c.taskList[tab]?.values.elementAt(sectionIndex).elementAt(subsectionIndex) ?? ''),
+        trailing: IconButton(
+          icon: const Icon(Icons.delete),
+          onPressed: () {
+            // debugPrint('Delete Button Pressed.');
+            c.deleteTask(tab, c.taskList[tab]?.keys.elementAt(sectionIndex) ?? '', subsectionIndex);
+          },
         ),
-        actions: <Widget>[
-          TextButton(
-            style: TextButton.styleFrom(
-              textStyle: Theme.of(context).textTheme.labelLarge,
-            ),
-            child: const Text('Cancel'),
-            onPressed: () {
-              _controller.clear();
-              Navigator.of(context).pop();
-            },
-          ),
-          TextButton(
-            style: TextButton.styleFrom(
-              textStyle: Theme.of(context).textTheme.labelLarge,
-            ),
-            child: const Text('Enter'),
-            onPressed: () {
-              tasksBySections['Today']!.add(_controller.text); // hard coded to 'Today' for now
-              debugPrint('Task added: ${_controller.text}, new list: ${tasksBySections['Today']}');
-              _controller.clear();
-              Navigator.of(context).pop();
-            },
-          ),
-        ],
-      );
-    },
+      ),
+    ),
   );
 }

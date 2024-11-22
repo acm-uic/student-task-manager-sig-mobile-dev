@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:student_task_manager/controllers/countController.dart';
+import 'package:student_task_manager/controllers/count_controller.dart';
 import '../widgets/general/bottom_tab_navigator.dart';
 
 class GymPage extends StatelessWidget {
