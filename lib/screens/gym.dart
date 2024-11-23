@@ -1,8 +1,11 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:student_task_manager/controllers/countController.dart';
 import '../widgets/general/bottom_tab_navigator.dart';
 
 class GymPage extends StatelessWidget {
   const GymPage({super.key});
+  final int streak = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +17,8 @@ class GymPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: Stack(
-        // stack layers widgets
         children: [
+          // Align "Monday" text in top left
           Align(
             alignment: Alignment.topLeft,
             child: Padding(
@@ -35,6 +38,31 @@ class GymPage extends StatelessWidget {
           // Centered Main Text
           const Center(
             child: Text("Let's get them gains!"),
+          ),
+
+          // Streak counter with flame icon in top right
+          Positioned(
+            right: 12.0,
+            top: 20.0,
+            child: Row(
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.local_fire_department),
+                  color: Colors.orange,
+                  onPressed: () {
+                    Get.find<CountController>().increment();
+                  },
+                ),
+                GetBuilder<CountController>(
+                    init: CountController(),
+                    builder: (controller) {
+                      return Text(
+                        '${controller.count}',
+                        style: const TextStyle(fontSize: 20),
+                      );
+                    }),
+              ],
+            ),
           ),
         ],
       ),
