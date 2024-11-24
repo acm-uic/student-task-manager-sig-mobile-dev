@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../widgets/general/bottom_tab_navigator.dart';
-import '../widgets/home/home_controller.dart';
+import '../widgets/home/controller.dart';
 import '../widgets/home/task_list_builder.dart';
 
 class MainHomePage extends StatelessWidget {
   MainHomePage({super.key});
 
-  final MainHomePageController mainController = Get.put(MainHomePageController());
+  final MainHomePageController homeController = Get.put(MainHomePageController());
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class MainHomePage extends StatelessWidget {
                 Expanded(
                   child: 
                   TextField( // search bar
-                    controller: mainController.searchController,
+                    controller: homeController.searchController,
                     decoration: InputDecoration(
                       hintText: 'Search',
                       prefixIcon: const Icon(Icons.search_rounded),
@@ -51,7 +51,7 @@ class MainHomePage extends StatelessWidget {
                 IconButton(
                   icon: const Icon(Icons.add_circle, color: Colors.red, size: 40),
                   onPressed: () {
-                    mainController.addTaskButton(context, mainController.tab);
+                    homeController.newTaskPopupBox(context, homeController.tab);
                   },
                 )
               ]
@@ -59,8 +59,7 @@ class MainHomePage extends StatelessWidget {
           ]),
           bottom: TabBar(
             onTap: (index) {
-              debugPrint('Tab index: $index');
-              mainController.tab = ( // set tab to the corresponding string
+              homeController.tab = ( // set tab to the corresponding string
                 index == 0 ? 'Work': 
                 index == 1 ? 'College': 
                 index == 2 ? 'Personal': 
@@ -85,20 +84,14 @@ class MainHomePage extends StatelessWidget {
             TabBarView(
             children: [
               Center(
-                // More components for work tab 
                 child: 
-                  taskListBuilder('Work'),   
-                  // Text('Work tasks')
+                  taskListBuilder('Work'),
               ),
               Center(
                 child: taskListBuilder('College'),
-                // More components for college tab 
-                // Text('College tasks')
               ),
               Center(
                 child: taskListBuilder('Personal'),
-                // More components for personal tab
-                // Text('Personal'),
               ),
             ],
           ),

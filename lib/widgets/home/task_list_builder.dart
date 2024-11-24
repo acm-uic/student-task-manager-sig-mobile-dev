@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:student_task_manager/widgets/home/home_controller.dart';
+import 'package:student_task_manager/widgets/home/controller.dart';
 
 Widget taskListBuilder(String tab) {
   final MainHomePageController c = Get.find();
   return Obx(() {
+    if(c.taskList[tab]?.isEmpty ?? true) {
+      return const Center(
+        child: Text('No tasks to display'),
+      );
+    }
     return ListView.builder(
       itemCount: c.taskList[tab]?.length,
       itemBuilder: (context, sectionIndex) {
@@ -12,7 +17,7 @@ Widget taskListBuilder(String tab) {
           children: [
             ListTile(
               title: Text(
-                c.taskList[tab]?.keys.elementAt(sectionIndex) ?? '',
+                'Due: ${c.taskList[tab]?.keys.elementAt(sectionIndex) ?? ''}',
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
