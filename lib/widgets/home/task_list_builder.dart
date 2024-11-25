@@ -5,7 +5,7 @@ import 'package:student_task_manager/widgets/home/controller.dart';
 Widget taskListBuilder(String tab) {
   final MainHomePageController c = Get.find();
   return Obx(() {
-    if(c.taskList[tab]?.isEmpty ?? true) {
+    if(c.taskList[tab]?.isEmpty ?? true) { // default display message if no tasks in current tab
       return const Center(
         child: Text('No tasks to display'),
       );

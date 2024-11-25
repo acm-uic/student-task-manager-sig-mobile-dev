@@ -51,7 +51,7 @@ class MainHomePageController extends GetxController {
               Obx(() {
                 return TextField(
                   controller: dateController,
-                  readOnly: true, // Make it readonly so user can't type
+                  readOnly: true, // Make it read-only so user can't type
                   decoration: InputDecoration(
                     labelText: 'Due Date',
                     hintText: 'Select due date',
@@ -74,7 +74,7 @@ class MainHomePageController extends GetxController {
                 dateSelected.value = true;
                 newTaskController.clear();
                 dateController.clear();
-                Navigator.of(context).pop();
+                Navigator.of(context).pop(); // closes the dialog box
               },
             ),
             TextButton(
@@ -90,7 +90,7 @@ class MainHomePageController extends GetxController {
                   if(dateController.text.isEmpty) {
                     dateSelected.value = false;
                   }
-                  return;
+                  return; // prevents closing of dialog box if field(s) are empty
                 }
                 taskSelected.value = true; // resets error message
                 dateSelected.value = true;
@@ -99,11 +99,10 @@ class MainHomePageController extends GetxController {
                 }
                 taskList[tab]?[dateController.text]?.add(newTaskController.text); 
                 taskList[tab]?[dateController.text] = taskList[tab]?[dateController.text]?.toSet().toList() ?? []; // remove duplicates
-                // taskList[tab] = Map.fromEntries(taskList[tab]!.entries.toList()..sort((a, b) => a.key.compareTo(b.key))); // sort tasks alphabetically
                 newTaskController.clear();
                 dateController.clear();
                 taskList.refresh();
-                Navigator.of(context).pop();
+                Navigator.of(context).pop(); // closes the dialog box
               },
             ),
           ],
