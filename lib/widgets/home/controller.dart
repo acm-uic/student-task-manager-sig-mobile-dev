@@ -1,6 +1,7 @@
 import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'task_list_database.dart';
 
 class MainHomePageController extends GetxController {
   // Map of tasks with keys as tabs and values as SplayTreeMaps(sorted maps) with keys as sections and value as list of tasks
@@ -9,17 +10,39 @@ class MainHomePageController extends GetxController {
     'College': SplayTreeMap<String, List<String>>(),
     'Personal': SplayTreeMap<String, List<String>>(),
   });
-
+  
   String tab = 'Work'; // current tab, default to 'Work' when clicking on home screen
 
   final TextEditingController searchController = TextEditingController(), 
                               newTaskController = TextEditingController(),
                               dateController = TextEditingController();
+
   DateTime selectedDate = DateTime.now();
   RxBool taskSelected = true.obs, dateSelected = true.obs;
 
+
+  @override
+  void onInit() {
+    super.onInit();
+    _initializeDatabase();
+  }
+
+  Future<void> _initializeDatabase() async {
+    await DatabaseHelper.instance.initDb();
+    Future<List<Map<String, dynamic>>> tasks = DatabaseHelper.instance.queryAllTasks();
+    tasks.then((value) {
+      for(Map<String, dynamic> task in value) {
+        if(!(taskList[(task['tab'] as String)]?.containsKey(task['section'] as String) ?? false)) { // checks if section exists
+          taskList[task['tab'] as String]?[task['section'] as String] = [];
+        }
+        taskList[task['tab'] as String]?[task['section'] as String]?.add(task['detail'] as String);
+      }
+      taskList.refresh();
+    });
+  }
+
   Future<void> selectDate(BuildContext context) async {
-    final DateTime? pickedDate = await showDatePicker(
+    final DateTime? pickedDate = await showDatePicker( 
       context: context,
       initialDate: selectedDate,
       firstDate: DateTime(2020),
@@ -82,7 +105,7 @@ class MainHomePageController extends GetxController {
                 textStyle: Theme.of(context).textTheme.labelLarge,
               ),
               child: const Text('Enter'),
-              onPressed: () {
+              onPressed: () async {
                 if(newTaskController.text.isEmpty || dateController.text.isEmpty) { // require both fields to be filled
                   if(newTaskController.text.isEmpty) {
                     taskSelected.value = false;
@@ -94,15 +117,18 @@ class MainHomePageController extends GetxController {
                 }
                 taskSelected.value = true; // resets error message
                 dateSelected.value = true;
+
+                Navigator.of(context).pop(); // closes the dialog box
                 if(!(taskList[tab]?.containsKey(dateController.text) ?? false)) { // checks if section exists
                   taskList[tab]?[dateController.text] = []; // create new section with empty task list
                 }
                 taskList[tab]?[dateController.text]?.add(newTaskController.text); 
                 taskList[tab]?[dateController.text] = taskList[tab]?[dateController.text]?.toSet().toList() ?? []; // remove duplicates
+                await DatabaseHelper.instance.insertTask(Task(tab: tab, section: dateController.text, detail: newTaskController.text));
+
                 newTaskController.clear();
                 dateController.clear();
                 taskList.refresh();
-                Navigator.of(context).pop(); // closes the dialog box
               },
             ),
           ],
@@ -112,7 +138,8 @@ class MainHomePageController extends GetxController {
   }
 
   void deleteTask(String tab, String section, int taskIndex) {
-    if (taskList[tab]?.containsKey(section) ?? false) { // check if section exists
+    DatabaseHelper.instance.deleteTask(tab, section, taskList[tab]?[section]?.elementAt(taskIndex) ?? ''); // delete task from database
+    if (taskList[tab]?.containsKey(section) ?? false) { // delete task from taskList
       taskList[tab]?[section]?.removeAt(taskIndex);
       if(taskList[tab]?[section]?.isEmpty ?? false) {
         taskList[tab]?.remove(section);

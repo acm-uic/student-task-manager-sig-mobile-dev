@@ -23,7 +23,7 @@ Widget taskListBuilder(String tab) {
                 ),
               ),
             ),
-            subsectionList(tab, sectionIndex, c.taskList[tab]?[c.taskList[tab]?.keys.elementAt(sectionIndex)]),
+            sectionList(tab, sectionIndex, c.taskList[tab]?[c.taskList[tab]?.keys.elementAt(sectionIndex)]),
           ],
         );
       }
@@ -31,32 +31,32 @@ Widget taskListBuilder(String tab) {
   });
 }
 
-Widget subsectionList(String tab, int sectionIndex, List<String>? tasks) {
+Widget sectionList(String tab, int sectionIndex, List<String>? tasks) {
   return ListView.builder(
     shrinkWrap: true,
     physics: const ClampingScrollPhysics(),
     itemCount: tasks?.length ?? 0, // sets itemCount to 0 if tasks is null
-    itemBuilder: (context, subsectionIndex) {
+    itemBuilder: (context, taskIndex) {
       if(tasks == null || tasks.isEmpty) {
         return const SizedBox.shrink(); // return empty container if no tasks
       }
-      return subsectionTask(tab, sectionIndex, subsectionIndex);
+      return taskList(tab, sectionIndex, taskIndex);
     },
   );
 }
 
-Widget subsectionTask(String tab, int sectionIndex, int subsectionIndex) {
+Widget taskList(String tab, int sectionIndex, int taskIndex) {
   final MainHomePageController c = Get.find();
   return Card(
     clipBehavior: Clip.hardEdge,
     child: InkWell(
       splashColor: Colors.red.withAlpha(30),
       child: ListTile(
-        title: Text(c.taskList[tab]?.values.elementAt(sectionIndex).elementAt(subsectionIndex) ?? ''),
+        title: Text(c.taskList[tab]?.values.elementAt(sectionIndex).elementAt(taskIndex) ?? ''),
         trailing: IconButton(
           icon: const Icon(Icons.delete),
           onPressed: () {
-            c.deleteTask(tab, c.taskList[tab]?.keys.elementAt(sectionIndex) ?? '', subsectionIndex);
+            c.deleteTask(tab, c.taskList[tab]?.keys.elementAt(sectionIndex) ?? '', taskIndex);
           },
         ),
       ),
