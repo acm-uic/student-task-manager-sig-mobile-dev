@@ -80,12 +80,11 @@ class MainHomePage extends StatelessWidget {
             ),
           ),
         ),
-        body: 
+        body:
             TabBarView(
             children: [
               Center(
-                child: 
-                  taskListBuilder('Work'),
+                child: taskListBuilder('Work'),
               ),
               Center(
                 child: taskListBuilder('College'),
