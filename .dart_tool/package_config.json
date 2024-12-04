@@ -53,7 +53,7 @@
       "name": "flutter_lints",
       "rootUri": "file:///C:/Users/Anirudh/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.5"
     },
     {
       "name": "flutter_test",
@@ -89,7 +89,7 @@
       "name": "lints",
       "rootUri": "file:///C:/Users/Anirudh/AppData/Local/Pub/Cache/hosted/pub.dev/lints-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.5"
     },
     {
       "name": "matcher",
@@ -110,6 +110,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "pair",
+      "rootUri": "file:///C:/Users/Anirudh/AppData/Local/Pub/Cache/hosted/pub.dev/pair-0.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
       "name": "path",
       "rootUri": "file:///C:/Users/Anirudh/AppData/Local/Pub/Cache/hosted/pub.dev/path-1.9.0",
       "packageUri": "lib/",
@@ -128,6 +134,36 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "sqflite",
+      "rootUri": "file:///C:/Users/owenl/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite-2.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "sqflite_android",
+      "rootUri": "file:///C:/Users/owenl/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_android-2.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "sqflite_common",
+      "rootUri": "file:///C:/Users/owenl/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_common-2.5.4+6",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "sqflite_darwin",
+      "rootUri": "file:///C:/Users/owenl/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_darwin-2.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "sqflite_platform_interface",
+      "rootUri": "file:///C:/Users/owenl/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_platform_interface-2.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
       "name": "stack_trace",
       "rootUri": "file:///C:/Users/Anirudh/AppData/Local/Pub/Cache/hosted/pub.dev/stack_trace-1.11.1",
       "packageUri": "lib/",
@@ -144,6 +180,12 @@
       "rootUri": "file:///C:/Users/Anirudh/AppData/Local/Pub/Cache/hosted/pub.dev/string_scanner-1.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
+    },
+    {
+      "name": "synchronized",
+      "rootUri": "file:///C:/Users/owenl/AppData/Local/Pub/Cache/hosted/pub.dev/synchronized-3.3.0+3",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
     },
     {
       "name": "term_glyph",
@@ -176,7 +218,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-11-15T19:54:41.779307Z",
+  "generated": "2024-11-26T19:58:25.417782Z",
   "generator": "pub",
   "generatorVersion": "3.5.0",
   "flutterRoot": "file:///C:/Users/Anirudh/Documents/myapps/Flutter/flutter",

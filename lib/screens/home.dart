@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../widgets/general/bottom_tab_navigator.dart';
+import '../widgets/home/controller.dart';
+import '../widgets/home/task_list_builder.dart';
 
 class MainHomePage extends StatelessWidget {
-  const MainHomePage({super.key});
+  MainHomePage({super.key});
+
+  final MainHomePageController homeController = Get.put(MainHomePageController());
 
   @override
   Widget build(BuildContext context) {
-    return (DefaultTabController(
+    return DefaultTabController(
       length: 3,
       child: Scaffold(
         appBar:  AppBar(
@@ -16,7 +21,7 @@ class MainHomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-            Text(
+            const Text(
               "Tasks",
               style: TextStyle(
                 color: Colors.black,
@@ -24,11 +29,13 @@ class MainHomePage extends StatelessWidget {
                 fontSize: 35,
               ),
             ),
-            const SizedBox(height: 20,),
+            const SizedBox(height: 20),
             Row(
               children: [
-                Expanded(child: 
-                  TextField(
+                Expanded(
+                  child: 
+                  TextField( // search bar
+                    controller: homeController.searchController,
                     decoration: InputDecoration(
                       hintText: 'Search',
                       prefixIcon: const Icon(Icons.search_rounded),
@@ -42,22 +49,30 @@ class MainHomePage extends StatelessWidget {
                   ),
                 ),
                 IconButton(
-                  icon: Icon(Icons.add_circle, color: Colors.red, size: 40,),
+                  icon: const Icon(Icons.add_circle, color: Colors.red, size: 40),
                   onPressed: () {
-                    // add more task here??
+                    homeController.newTaskPopupBox(context, homeController.tab);
                   },
                 )
               ]
             )
           ]),
-          bottom: const TabBar(
-            tabs: [
+          bottom: TabBar(
+            onTap: (index) {
+              homeController.tab = ( // set tab to the corresponding string
+                index == 0 ? 'Work': 
+                index == 1 ? 'College': 
+                index == 2 ? 'Personal': 
+                throw Exception('Invalid tab index')
+                );
+            },
+            tabs: const [
               Tab(text: "Work"),
               Tab(text: "College"),
               Tab(text: "Personal"),
             ],
             labelColor: Colors.red,
-            indicator: UnderlineTabIndicator(
+            indicator: const UnderlineTabIndicator(
               borderSide: BorderSide(
                 color: Colors.red, // Background color for selected tab
                 width: 2,
@@ -65,25 +80,22 @@ class MainHomePage extends StatelessWidget {
             ),
           ),
         ),
-        body: const TabBarView(
-          children: [
-            Center(child: 
-              // More components for work tab
-              Text('Work tasks')
-            ),
-            Center(child:
-              // More components for college tab 
-              Text('College tasks')
-            ),
-            Center(child: 
-              // More components for personal tab
-              Text('Personal tasks')
-            )
-          ],
-        ),
+        body:
+            TabBarView(
+            children: [
+              Center(
+                child: taskListBuilder('Work'),
+              ),
+              Center(
+                child: taskListBuilder('College'),
+              ),
+              Center(
+                child: taskListBuilder('Personal'),
+              ),
+            ],
+          ),
         bottomNavigationBar: bottomTabNavigator(),
-      ))
+      ),
     );
   }
-
 }

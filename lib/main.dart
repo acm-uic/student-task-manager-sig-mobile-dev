@@ -21,11 +21,11 @@ class MyApp extends StatelessWidget {
       ),
       // Establishes named routes for the other pages we have.
       getPages: [
-        GetPage(name: '/home', page: () => const MainHomePage()),
+        GetPage(name: '/home', page: () => MainHomePage()),
         GetPage(name: '/gym', page: () => const GymPage()),
         GetPage(name: '/thoughts', page: () => const ThoughtsPage())
       ],
-      home: const MainHomePage(),
+      home: MainHomePage(),
     );
   }
 }
