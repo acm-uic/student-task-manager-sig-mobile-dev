@@ -1,5 +1,7 @@
 import 'package:path/path.dart';
-import 'package:sqflite/sqflite.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart'; // allows non-mobile platforms (but not web)
+import 'package:flutter/foundation.dart'; // For kIsWeb
+import 'dart:io';
 
 class Task {
   final String tab;
@@ -41,19 +43,19 @@ class DatabaseHelper {
   }
 
   Future<Database> initDb() async {
+    if(kIsWeb) { // For web platform
+      throw UnsupportedError('Web platforms are not yet supported');
+    }
+    else if(Platform.isWindows || Platform.isLinux || Platform.isMacOS) { // For non-mobile platforms
+      sqfliteFfiInit();
+      databaseFactory = databaseFactoryFfi;
+    }
     String databasesPath = await getDatabasesPath();
     String path = join(databasesPath, 'task_manager.db');
-
     return await openDatabase(path, version: 1, onCreate: _onCreate);
   }
 
   Future _onCreate(Database db, int version) async {
-    String databasesPath = await getDatabasesPath();
-
-    // resets database on each run, remove when database is finalized
-    String path = join(databasesPath, 'task_manager.db');
-    await deleteDatabase(path); 
-    
     // key is a combination of tab, section, and detail, used in deleteTask()
     await db.execute('''
       CREATE TABLE task_list (
@@ -63,6 +65,11 @@ class DatabaseHelper {
         PRIMARY KEY (tab, section, detail) 
       )
     ''');
+  }  
+
+  Future<void> close() async {
+    final db = await instance.db;
+    await db.close();
   }
 
   Future<void> insertTask(Task task) async { 
@@ -86,6 +93,14 @@ class DatabaseHelper {
       task.toMap(), 
      where: 'tab = ? AND section = ? AND where: detail = ?', 
      whereArgs: [task.tab, task.section, task.detail]);
+  }
+
+  void deleteTaskDatabase() async { // delete this function when database is finalized.
+    // resets database on each run, remove when database is finalized
+    String databasesPath = await getDatabasesPath();
+    String path = join(databasesPath, 'task_manager.db');
+    await deleteDatabase(path); 
+    
   }
 
   Future<void> deleteTask(String tab, String section, String detail) async {

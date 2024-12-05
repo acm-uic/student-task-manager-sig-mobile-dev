@@ -51,7 +51,8 @@ class MainHomePage extends StatelessWidget {
                 IconButton(
                   icon: const Icon(Icons.add_circle, color: Colors.red, size: 40),
                   onPressed: () {
-                    homeController.newTaskPopupBox(context, homeController.tab);
+                    // homeController.newTaskPopupBox(context, homeController.tab);
+                    homeController.newTaskPopupBox(context);
                   },
                 )
               ]
@@ -59,12 +60,7 @@ class MainHomePage extends StatelessWidget {
           ]),
           bottom: TabBar(
             onTap: (index) {
-              homeController.tab = ( // set tab to the corresponding string
-                index == 0 ? 'Work': 
-                index == 1 ? 'College': 
-                index == 2 ? 'Personal': 
-                throw Exception('Invalid tab index')
-                );
+              homeController.tab = homeController.tabs[index];
             },
             tabs: const [
               Tab(text: "Work"),

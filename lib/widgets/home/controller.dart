@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'task_list_database.dart';
 
+
 class MainHomePageController extends GetxController {
   // Map of tasks with keys as tabs and values as SplayTreeMaps(sorted maps) with keys as sections and value as list of tasks
   RxMap<String, SplayTreeMap<String, List<String>>> taskList = RxMap<String, SplayTreeMap<String, List<String>>>({
@@ -10,8 +11,9 @@ class MainHomePageController extends GetxController {
     'College': SplayTreeMap<String, List<String>>(),
     'Personal': SplayTreeMap<String, List<String>>(),
   });
-  
-  String tab = 'Work'; // current tab, default to 'Work' when clicking on home screen
+
+  List<String> tabs = ['Work', 'College', 'Personal']; // list of tabs
+  late String tab; // current tab
 
   final TextEditingController searchController = TextEditingController(), 
                               newTaskController = TextEditingController(),
@@ -20,19 +22,19 @@ class MainHomePageController extends GetxController {
   DateTime selectedDate = DateTime.now();
   RxBool taskSelected = true.obs, dateSelected = true.obs;
 
-
   @override
-  void onInit() {
+  void onInit() { // called immediately after the widget is allocated memory
     super.onInit();
     _initializeDatabase();
+    tab = tabs[0]; // sets default tab to Work
   }
 
   Future<void> _initializeDatabase() async {
     await DatabaseHelper.instance.initDb();
-    Future<List<Map<String, dynamic>>> tasks = DatabaseHelper.instance.queryAllTasks();
-    tasks.then((value) {
+    Future<List<Map<String, dynamic>>> tasks = DatabaseHelper.instance.queryAllTasks(); // get all tasks from database
+    tasks.then((value) { // populates taskList with tasks from database
       for(Map<String, dynamic> task in value) {
-        if(!(taskList[(task['tab'] as String)]?.containsKey(task['section'] as String) ?? false)) { // checks if section exists
+        if(!(taskList[task['tab'] as String]?.containsKey(task['section'] as String) ?? false)) { // checks if section exists
           taskList[task['tab'] as String]?[task['section'] as String] = [];
         }
         taskList[task['tab'] as String]?[task['section'] as String]?.add(task['detail'] as String);
@@ -53,7 +55,7 @@ class MainHomePageController extends GetxController {
     }
   }
 
-  void newTaskPopupBox(BuildContext context, String tab) {
+  void newTaskPopupBox(BuildContext context) {
     showDialog<void>(
       context: context,
       builder: (BuildContext context) {
@@ -146,5 +148,14 @@ class MainHomePageController extends GetxController {
       }
       taskList.refresh();
     }
+  }
+
+  @override
+  void onClose() {
+    searchController.dispose();
+    newTaskController.dispose();
+    dateController.dispose();
+    DatabaseHelper.instance.close(); // Close the database
+    super.onClose();
   }
 }

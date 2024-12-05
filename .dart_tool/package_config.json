@@ -44,6 +44,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "ffi",
+      "rootUri": "file:///C:/Users/owenl/AppData/Local/Pub/Cache/hosted/pub.dev/ffi-2.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///C:/Users/owenl/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -164,6 +170,12 @@
       "languageVersion": "3.5"
     },
     {
+      "name": "sqflite_common_ffi",
+      "rootUri": "file:///C:/Users/owenl/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_common_ffi-2.3.4+3",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
       "name": "sqflite_darwin",
       "rootUri": "file:///C:/Users/owenl/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_darwin-2.4.1",
       "packageUri": "lib/",
@@ -172,6 +184,12 @@
     {
       "name": "sqflite_platform_interface",
       "rootUri": "file:///C:/Users/owenl/AppData/Local/Pub/Cache/hosted/pub.dev/sqflite_platform_interface-2.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "sqlite3",
+      "rootUri": "file:///C:/Users/owenl/AppData/Local/Pub/Cache/hosted/pub.dev/sqlite3-2.5.0",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
@@ -212,6 +230,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "typed_data",
+      "rootUri": "file:///C:/Users/owenl/AppData/Local/Pub/Cache/hosted/pub.dev/typed_data-1.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///C:/Users/owenl/AppData/Local/Pub/Cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
@@ -224,13 +248,19 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "web",
+      "rootUri": "file:///C:/Users/owenl/AppData/Local/Pub/Cache/hosted/pub.dev/web-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
       "name": "student_task_manager",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-11-27T21:01:47.178006Z",
+  "generated": "2024-12-05T01:28:11.341441Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///C:/Users/owenl/flutter",
