@@ -12,13 +12,13 @@ class MainHomePageController extends GetxController {
     'Personal': SplayTreeMap<String, List<String>>(),
   });
 
+  RxString filter = "".obs; // filter for search bar
+
   List<String> tabs = ['Work', 'College', 'Personal']; // list of tabs
   late String tab; // current tab
 
-  final TextEditingController searchController = TextEditingController(), 
-                              newTaskController = TextEditingController(),
+  final TextEditingController newTaskController = TextEditingController(),
                               dateController = TextEditingController();
-
   DateTime selectedDate = DateTime.now();
   RxBool taskSelected = true.obs, dateSelected = true.obs;
 
@@ -152,7 +152,6 @@ class MainHomePageController extends GetxController {
 
   @override
   void onClose() {
-    searchController.dispose();
     newTaskController.dispose();
     dateController.dispose();
     DatabaseHelper.instance.close(); // Close the database

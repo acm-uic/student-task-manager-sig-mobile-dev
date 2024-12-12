@@ -1,7 +1,7 @@
 import 'package:path/path.dart';
-import 'package:sqflite_common_ffi/sqflite_ffi.dart'; // allows non-mobile platforms (but not web)
-import 'package:flutter/foundation.dart'; // For kIsWeb
-import 'dart:io';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart'; // allows mobile and non-mobile platforms (but not web)
+import 'package:flutter/foundation.dart'; // For checking web plaforms
+import 'dart:io'; // For checking non-mobile platforms
 
 class Task {
   final String tab;
@@ -99,8 +99,7 @@ class DatabaseHelper {
     // resets database on each run, remove when database is finalized
     String databasesPath = await getDatabasesPath();
     String path = join(databasesPath, 'task_manager.db');
-    await deleteDatabase(path); 
-    
+    await deleteDatabase(path);  
   }
 
   Future<void> deleteTask(String tab, String section, String detail) async {

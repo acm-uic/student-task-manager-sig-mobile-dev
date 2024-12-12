@@ -33,9 +33,7 @@ class MainHomePage extends StatelessWidget {
             Row(
               children: [
                 Expanded(
-                  child: 
-                  TextField( // search bar
-                    controller: homeController.searchController,
+                  child: TextField( // search bar
                     decoration: InputDecoration(
                       hintText: 'Search',
                       prefixIcon: const Icon(Icons.search_rounded),
@@ -46,12 +44,15 @@ class MainHomePage extends StatelessWidget {
                       fillColor: Colors.grey[100],
                       filled: true,
                     ),
+                    onChanged: (value) {
+                      homeController.filter.value = value;   
+                      homeController.taskList.refresh(); // refreshes the UI to reflect the new filter
+                    }
                   ),
                 ),
                 IconButton(
                   icon: const Icon(Icons.add_circle, color: Colors.red, size: 40),
                   onPressed: () {
-                    // homeController.newTaskPopupBox(context, homeController.tab);
                     homeController.newTaskPopupBox(context);
                   },
                 )
@@ -76,20 +77,19 @@ class MainHomePage extends StatelessWidget {
             ),
           ),
         ),
-        body:
-            TabBarView(
-            children: [
-              Center(
-                child: taskListBuilder('Work'),
-              ),
-              Center(
-                child: taskListBuilder('College'),
-              ),
-              Center(
-                child: taskListBuilder('Personal'),
-              ),
-            ],
-          ),
+        body: TabBarView(
+          children: [
+            Center(
+              child: taskListBuilder('Work'),
+            ),
+            Center(
+              child: taskListBuilder('College'),
+            ),
+            Center(
+              child: taskListBuilder('Personal'),
+            ),
+          ],
+        ),
         bottomNavigationBar: bottomTabNavigator(),
       ),
     );

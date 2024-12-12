@@ -32,20 +32,21 @@ Widget taskListBuilder(String tab) {
 }
 
 Widget sectionList(String tab, int sectionIndex, List<String>? tasks) {
+  final MainHomePageController c = Get.find();
   return ListView.builder(
     shrinkWrap: true,
     physics: const ClampingScrollPhysics(),
     itemCount: tasks?.length ?? 0, // sets itemCount to 0 if tasks is null
     itemBuilder: (context, taskIndex) {
-      if(tasks == null || tasks.isEmpty) {
-        return const SizedBox.shrink(); // return empty container if no tasks
+      if(tasks == null || tasks.isEmpty || !tasks[taskIndex].contains(c.filter.value)) {
+        return const SizedBox.shrink(); // return empty container if no tasks or filter doesn't match task
       }
-      return taskList(tab, sectionIndex, taskIndex);
+      return task(tab, sectionIndex, taskIndex);
     },
   );
 }
 
-Widget taskList(String tab, int sectionIndex, int taskIndex) {
+Widget task(String tab, int sectionIndex, int taskIndex) {
   final MainHomePageController c = Get.find();
   return Card(
     clipBehavior: Clip.hardEdge,
