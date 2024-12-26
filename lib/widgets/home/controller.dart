@@ -31,6 +31,7 @@ class MainHomePageController extends GetxController {
 
   Future<void> _initializeDatabase() async {
     await DatabaseHelper.instance.initDb();
+    
     Future<List<Map<String, dynamic>>> tasks = DatabaseHelper.instance.queryAllTasks(); // get all tasks from database
     tasks.then((value) { // populates taskList with tasks from database
       for(Map<String, dynamic> task in value) {

@@ -3,13 +3,34 @@ import 'package:get/get.dart';
 import 'package:student_task_manager/screens/home.dart';
 import 'screens/gym.dart';
 import 'screens/thoughts.dart';
+import 'screens/error.dart';
+import 'package:flutter/foundation.dart'; // For checking web plaforms
 
 void main() {
-  runApp(const MyApp());
+  bool isInit = true;
+  String errorMessage = '';
+  try {
+    if(kIsWeb) { // For web platform
+      throw UnsupportedError('Web platforms are not yet supported');     
+    }
+  } 
+  catch(e) {
+    debugPrint(e.toString());
+    errorMessage = e.toString();
+    isInit = false;
+  }
+  if(isInit) {
+    runApp(MyApp(isInit: isInit));
+  }
+  else {
+    runApp(MyApp(isInit: isInit, errorMessage: errorMessage));
+  }
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final bool isInit;
+  final String? errorMessage;
+  const MyApp({super.key, required this.isInit, this.errorMessage});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +44,10 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/home', page: () => MainHomePage()),
         GetPage(name: '/gym', page: () => const GymPage()),
-        GetPage(name: '/thoughts', page: () => const ThoughtsPage())
+        GetPage(name: '/thoughts', page: () => const ThoughtsPage()),
+        GetPage(name: '/error', page: () => ErrorPage(errorMessage: errorMessage ?? '')),
       ],
-      home: MainHomePage(),
+      home: (isInit ? MainHomePage() : ErrorPage(errorMessage: errorMessage ?? '')), 
     );
   }
 }

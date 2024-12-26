@@ -1,6 +1,7 @@
+// import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:path/path.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart'; // allows mobile and non-mobile platforms (but not web)
-import 'package:flutter/foundation.dart'; // For checking web plaforms
+// import 'package:flutter/foundation.dart'; // For checking web plaforms
 import 'dart:io'; // For checking non-mobile platforms
 
 class Task {
@@ -43,10 +44,7 @@ class DatabaseHelper {
   }
 
   Future<Database> initDb() async {
-    if(kIsWeb) { // For web platform
-      throw UnsupportedError('Web platforms are not yet supported');
-    }
-    else if(Platform.isWindows || Platform.isLinux || Platform.isMacOS) { // For non-mobile platforms
+    if(Platform.isWindows || Platform.isLinux || Platform.isMacOS) { // For non-mobile platforms
       sqfliteFfiInit();
       databaseFactory = databaseFactoryFfi;
     }
