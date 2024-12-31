@@ -13,17 +13,18 @@ Widget taskListBuilder(String tab) {
     return ListView.builder(
       itemCount: c.taskList[tab]?.length,
       itemBuilder: (context, sectionIndex) {
+        String currSection = c.taskList[tab]?.keys.elementAt(sectionIndex) ?? '';
         return Column(
           children: [
             ListTile(
               title: Text(
-                'Due: ${c.taskList[tab]?.keys.elementAt(sectionIndex) ?? ''}',
+                'Due: $currSection',
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            sectionList(tab, sectionIndex, c.taskList[tab]?[c.taskList[tab]?.keys.elementAt(sectionIndex)]),
+            sectionList(tab, currSection, c.taskList[tab]?[c.taskList[tab]?.keys.elementAt(sectionIndex)]),
           ],
         );
       }
@@ -31,35 +32,58 @@ Widget taskListBuilder(String tab) {
   });
 }
 
-Widget sectionList(String tab, int sectionIndex, List<String>? tasks) {
+Widget sectionList(String tab, String section, Map<String, String>? tasks) {
   final MainHomePageController c = Get.find();
   return ListView.builder(
     shrinkWrap: true,
     physics: const ClampingScrollPhysics(),
     itemCount: tasks?.length ?? 0, // sets itemCount to 0 if tasks is null
     itemBuilder: (context, taskIndex) {
-      if(tasks == null || tasks.isEmpty || !tasks[taskIndex].contains(c.filter.value)) {
+      String currTask = tasks?.keys.elementAt(taskIndex) ?? '';
+      if(tasks == null || tasks.isEmpty || currTask.contains(c.filter.value) != true) {
         return const SizedBox.shrink(); // return empty container if no tasks or filter doesn't match task
       }
-      return task(tab, sectionIndex, taskIndex);
+      return task(tab, section, currTask);
     },
   );
 }
 
-Widget task(String tab, int sectionIndex, int taskIndex) {
+Widget task(String tab, String section, String task) {
   final MainHomePageController c = Get.find();
+  c.descriptionController.text = c.taskList[tab]?[section]?[task] ?? '';
   return Card(
     clipBehavior: Clip.hardEdge,
     child: InkWell(
       splashColor: Colors.red.withAlpha(30),
-      child: ListTile(
-        title: Text(c.taskList[tab]?.values.elementAt(sectionIndex).elementAt(taskIndex) ?? ''),
+      child: ExpansionTile(
+        title: Text(task),
         trailing: IconButton(
           icon: const Icon(Icons.delete),
           onPressed: () {
-            c.deleteTask(tab, c.taskList[tab]?.keys.elementAt(sectionIndex) ?? '', taskIndex);
+            c.deleteTask(tab, section, task);
           },
         ),
+        children: [
+          ListTile(
+            title: TextFormField(
+                controller: c.descriptionController,
+                readOnly: c.isReadOnly.value,
+                maxLines: null, // Allow multiline input
+                keyboardType: TextInputType.multiline, // Set keyboard type to multiline
+                decoration: InputDecoration(
+                  hintText: 'No description',
+                ),
+              ),
+              trailing: IconButton(
+                icon: c.isReadOnly.value ? Icon(Icons.edit) : Icon(Icons.save),
+                onPressed: () {
+                  c.updateTask(tab, section, task);
+                  c.isReadOnly.value = !c.isReadOnly.value;
+                  c.taskList.refresh();
+                },
+            ),
+          ),
+        ],
       ),
     ),
   );

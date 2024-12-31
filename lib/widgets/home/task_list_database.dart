@@ -1,33 +1,35 @@
-// import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:path/path.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart'; // allows mobile and non-mobile platforms (but not web)
-// import 'package:flutter/foundation.dart'; // For checking web plaforms
 import 'dart:io'; // For checking non-mobile platforms
 
-class Task {
+class DbTask {
   final String tab;
   final String section;
-  final String detail;
+  final String title;
+  final String description;
 
-  Task ({
+  DbTask ({
     required this.tab,
     required this.section,
-    required this.detail,
+    required this.title,
+    required this.description,
   });
 
   Map<String, dynamic> toMap() {
     return {
-      'tab': tab, 
-      'section': section,
-      'detail': detail,
+      'tab' : tab, 
+      'section' : section,
+      'title' : title,
+      'description' : description,
     };
   }
   
-  factory Task.fromMap(Map<String, dynamic> map) {
-    return Task(
+  factory DbTask.fromMap(Map<String, dynamic> map) {
+    return DbTask(
       tab: map['tab'],
       section: map['section'],
-      detail: map['detail'],
+      title: map['title'],
+      description: map['description'],
     );
   }
 }
@@ -49,18 +51,19 @@ class DatabaseHelper {
       databaseFactory = databaseFactoryFfi;
     }
     String databasesPath = await getDatabasesPath();
-    String path = join(databasesPath, 'task_manager.db');
+    String path = join(databasesPath, 'task_manager.db'); 
     return await openDatabase(path, version: 1, onCreate: _onCreate);
   }
 
   Future _onCreate(Database db, int version) async {
-    // key is a combination of tab, section, and detail, used in deleteTask()
+    // key is a combination of tab, section, title; used in deleteTask()
     await db.execute('''
       CREATE TABLE task_list (
         tab TEXT,
         section TEXT,
-        detail TEXT,
-        PRIMARY KEY (tab, section, detail) 
+        title TEXT,
+        description TEXT,
+        PRIMARY KEY (tab, section, title) 
       )
     ''');
   }  
@@ -70,7 +73,7 @@ class DatabaseHelper {
     await db.close();
   }
 
-  Future<void> insertTask(Task task) async { 
+  Future<void> insertTask(DbTask task) async { 
     Database db = await instance.db;
     await db.insert(
       'task_list', 
@@ -84,13 +87,13 @@ class DatabaseHelper {
     return await db.query('task_list');
   }
 
-  Future<void> updateTask(Task task) async {
+  Future<void> updateTask(DbTask task) async {
     Database db = await instance.db;
     await db.update(
       'task_list', 
       task.toMap(), 
-     where: 'tab = ? AND section = ? AND where: detail = ?', 
-     whereArgs: [task.tab, task.section, task.detail]);
+      where: 'tab = ? AND section = ? AND title = ?', 
+      whereArgs: [task.tab, task.section, task.title]);
   }
 
   void deleteTaskDatabase() async { // delete this function when database is finalized.
@@ -100,12 +103,12 @@ class DatabaseHelper {
     await deleteDatabase(path);  
   }
 
-  Future<void> deleteTask(String tab, String section, String detail) async {
+  Future<void> deleteTask(String tab, String section, String title) async {
     Database db = await instance.db;
     await db.delete(
       'task_list', 
-      where: 'tab = ? AND section = ? AND detail = ?',
-      whereArgs: [tab, section, detail]
+      where: 'tab = ? AND section = ? AND title = ?',
+      whereArgs: [tab, section, title],
     );
   }
 }

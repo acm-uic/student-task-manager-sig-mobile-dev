@@ -7,7 +7,6 @@ import 'screens/error.dart';
 import 'package:flutter/foundation.dart'; // For checking web plaforms
 
 void main() {
-  bool isInit = true;
   String errorMessage = '';
   try {
     if(kIsWeb) { // For web platform
@@ -15,22 +14,14 @@ void main() {
     }
   } 
   catch(e) {
-    debugPrint(e.toString());
     errorMessage = e.toString();
-    isInit = false;
   }
-  if(isInit) {
-    runApp(MyApp(isInit: isInit));
-  }
-  else {
-    runApp(MyApp(isInit: isInit, errorMessage: errorMessage));
-  }
+  runApp(MyApp(errorMessage: errorMessage));
 }
 
 class MyApp extends StatelessWidget {
-  final bool isInit;
-  final String? errorMessage;
-  const MyApp({super.key, required this.isInit, this.errorMessage});
+  final String errorMessage;
+  const MyApp({super.key, required this.errorMessage});
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +36,9 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/home', page: () => MainHomePage()),
         GetPage(name: '/gym', page: () => const GymPage()),
         GetPage(name: '/thoughts', page: () => const ThoughtsPage()),
-        GetPage(name: '/error', page: () => ErrorPage(errorMessage: errorMessage ?? '')),
+        GetPage(name: '/error', page: () => ErrorPage(errorMessage: errorMessage)),
       ],
-      home: (isInit ? MainHomePage() : ErrorPage(errorMessage: errorMessage ?? '')), 
+      home: (errorMessage.isEmpty ? MainHomePage() : ErrorPage(errorMessage: errorMessage)), 
     );
   }
 }
